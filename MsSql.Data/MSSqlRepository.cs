@@ -11,13 +11,12 @@ namespace MsSql.Data
     {
         public async Task CreteDb()
         {
-            var ctx = new FootballContext();
-            using (ctx)
+            
+            using (var ctx = new FootballContext())
             {
-                var players = ctx.Players.ToListAsync();
-                var task = ctx.SaveChangesAsync();
+                await ctx.Players.ToListAsync();
+                await ctx.SaveChangesAsync();
 
-                await Task.WhenAll(players, task);
             }
         }
     }

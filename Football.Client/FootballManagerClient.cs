@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MongoDb.Data;
 using MsSql.Data;
 
 namespace Football.Client
@@ -18,13 +19,30 @@ namespace Football.Client
             InitializeComponent();
         }
 
-        private void CreateSqlServerDb_Click(object sender, EventArgs e)
+        private async void CreateSqlServerDb_Click(object sender, EventArgs e)
         {
-            var msSqlRepo = new MSSqlRepository();
+            var repo = new MSSqlRepository();
+            await repo.CreteDb();
 
-            var task = msSqlRepo.CreteDb();
+        }
 
-            
+        private async void GetMongoData_Click(object sender, EventArgs e)
+        {
+            var repo = new MongoDbRepository();
+
+            var players = (await repo.GetPlayers()).ToList();
+
+            var ctx = new FootballContext();
+
+            foreach (var player in players)
+            {
+                if (!ctx.Players.Any(pl => pl.Id == player.Id))
+                {
+                    ctx.Players.Add(player);
+                }
+            }
+
+            ctx.SaveChanges();
         }
     }
 }

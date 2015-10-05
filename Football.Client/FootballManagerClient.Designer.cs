@@ -26,9 +26,10 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        private async void InitializeComponent()
         {
             this.CreateSqlServerDb = new System.Windows.Forms.Button();
+            this.GetMongoData = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateSqlServerDb
@@ -41,11 +42,22 @@
             this.CreateSqlServerDb.UseVisualStyleBackColor = true;
             this.CreateSqlServerDb.Click += new System.EventHandler(this.CreateSqlServerDb_Click);
             // 
+            // GetMongoData
+            // 
+            this.GetMongoData.Location = new System.Drawing.Point(79, 100);
+            this.GetMongoData.Name = "GetMongoData";
+            this.GetMongoData.Size = new System.Drawing.Size(132, 23);
+            this.GetMongoData.TabIndex = 1;
+            this.GetMongoData.Text = "Fill Data From MongoDB";
+            this.GetMongoData.UseVisualStyleBackColor = true;
+            this.GetMongoData.Click += new System.EventHandler(this.GetMongoData_Click);
+            // 
             // FootballManagerClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.GetMongoData);
             this.Controls.Add(this.CreateSqlServerDb);
             this.Name = "FootballManagerClient";
             this.Text = "Form1";
@@ -56,6 +68,7 @@
         #endregion
 
         private System.Windows.Forms.Button CreateSqlServerDb;
+        private System.Windows.Forms.Button GetMongoData;
     }
 }
 
