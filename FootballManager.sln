@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Models", "Football.Models\Football.Models.csproj", "{75BDA7E9-A206-4887-A0E1-1E203593460D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MSSql", "MSSql", "{B32B4134-E30D-4F8B-ACF3-F0589918A39B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MySql", "MySql", "{A1856F23-7683-4559-B466-ABA416A96E0D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MongoDb", "MongoDb", "{98EB6466-6191-45EA-9CC7-C0F40EF99796}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SqLite", "SqLite", "{7C23422D-1FA9-4914-925C-8417EA1751E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsSql.Data", "MsSql.Data\MsSql.Data.csproj", "{460584CE-3DFF-46AC-8746-F4266D0178A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySql.Data", "MySql.Data\MySql.Data.csproj", "{FD10FAF1-CEB4-47E7-A7A0-E7F4D7485D97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDb.Data", "MongoDb.Data\MongoDb.Data.csproj", "{6EBA5CFB-D663-41AF-8CB8-099773375F2A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sqlite.Data", "Sqlite.Data\Sqlite.Data.csproj", "{A3AED09A-578E-46BB-9FED-DE14275F4F4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Client", "Football.Client\Football.Client.csproj", "{CD5DA011-B572-4D59-B14C-43F8C476F228}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75BDA7E9-A206-4887-A0E1-1E203593460D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75BDA7E9-A206-4887-A0E1-1E203593460D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75BDA7E9-A206-4887-A0E1-1E203593460D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75BDA7E9-A206-4887-A0E1-1E203593460D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{460584CE-3DFF-46AC-8746-F4266D0178A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{460584CE-3DFF-46AC-8746-F4266D0178A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{460584CE-3DFF-46AC-8746-F4266D0178A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{460584CE-3DFF-46AC-8746-F4266D0178A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD10FAF1-CEB4-47E7-A7A0-E7F4D7485D97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD10FAF1-CEB4-47E7-A7A0-E7F4D7485D97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD10FAF1-CEB4-47E7-A7A0-E7F4D7485D97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD10FAF1-CEB4-47E7-A7A0-E7F4D7485D97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EBA5CFB-D663-41AF-8CB8-099773375F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EBA5CFB-D663-41AF-8CB8-099773375F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EBA5CFB-D663-41AF-8CB8-099773375F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EBA5CFB-D663-41AF-8CB8-099773375F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3AED09A-578E-46BB-9FED-DE14275F4F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3AED09A-578E-46BB-9FED-DE14275F4F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3AED09A-578E-46BB-9FED-DE14275F4F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3AED09A-578E-46BB-9FED-DE14275F4F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD5DA011-B572-4D59-B14C-43F8C476F228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD5DA011-B572-4D59-B14C-43F8C476F228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD5DA011-B572-4D59-B14C-43F8C476F228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD5DA011-B572-4D59-B14C-43F8C476F228}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{460584CE-3DFF-46AC-8746-F4266D0178A2} = {B32B4134-E30D-4F8B-ACF3-F0589918A39B}
+		{FD10FAF1-CEB4-47E7-A7A0-E7F4D7485D97} = {A1856F23-7683-4559-B466-ABA416A96E0D}
+		{6EBA5CFB-D663-41AF-8CB8-099773375F2A} = {98EB6466-6191-45EA-9CC7-C0F40EF99796}
+		{A3AED09A-578E-46BB-9FED-DE14275F4F4A} = {7C23422D-1FA9-4914-925C-8417EA1751E2}
+	EndGlobalSection
+EndGlobal
