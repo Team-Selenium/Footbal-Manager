@@ -20,7 +20,6 @@ namespace Football.Models
             this.matches = new HashSet<Match>();
         }
 
-        [Key]
         public int Id { get; set; }
 
         public string Name { get; set; }

@@ -22,11 +22,8 @@ namespace Football.Models
 
         public int Number { get; set; }
 
+        public decimal Salary { get; set; }
+
         public Position Position { get; set; }
-
-
-
-
-
     }
 }

@@ -14,6 +14,5 @@ namespace Football.Models
         public int Capacity { get; set; }
 
         public virtual Town Town { get; set; }
-
     }
 }

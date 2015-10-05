@@ -22,5 +22,7 @@ namespace Football.Models
         public int HomeScore { get; set; }
 
         public int AwayScore { get; set; }
+
+        public DateTime Date { get; set; }
     }
 }
