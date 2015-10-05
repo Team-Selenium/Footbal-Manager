@@ -30,15 +30,15 @@ namespace Football.Client
         {
             var repo = new MongoDbRepository();
 
-            var players = (await repo.GetPlayers()).ToList();
+            var teams = (await repo.GetData()).ToList();
 
             var ctx = new FootballContext();
 
-            foreach (var player in players)
+            foreach (var team in teams)
             {
-                if (!ctx.Players.Any(pl => pl.Id == player.Id))
+                if (!ctx.Teams.Any(pl => pl.Id == team.Id))
                 {
-                    ctx.Players.Add(player);
+                    ctx.Teams.Add(team);
                 }
             }
 

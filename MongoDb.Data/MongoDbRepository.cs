@@ -17,14 +17,14 @@ namespace MongoDb.Data
         private static readonly MongoClient client = new MongoClient(connectionString);
         private static readonly IMongoDatabase database = client.GetDatabase("Football");
         private static readonly IMongoCollection<BsonDocument> collection =
-           database.GetCollection<BsonDocument>("Players");
+           database.GetCollection<BsonDocument>("Teams");
 
-        public async Task<IList<Player>> GetPlayers()
+        public async Task<IList<Team>> GetData()
         {
-            var players = (await collection.Find(new BsonDocument()).ToListAsync())
-                .Select(bs => BsonSerializer.Deserialize<Player>(bs)).ToList();
+            var teams = (await collection.Find(new BsonDocument()).ToListAsync())
+                .Select(bs => BsonSerializer.Deserialize<Team>(bs)).ToList();
 
-            return players;
+            return teams;
         }
     }
 
