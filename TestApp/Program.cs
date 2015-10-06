@@ -1,19 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ICSharpCode.SharpZipLib.Zip;
 using MongoDb.Data;
+using MsSql.Data;
+using Utilities;
 
 namespace TestApp
 {
     class Program
     {
-        static  void Main(string[] args)
+        static void Main(string[] args)
         {
-            var mongo = new MongoDbRepository();
+            //var zip = System.IO.Compression.ZipFile.Open("../../../Book1.zip", ZipArchiveMode.Read);
 
-            mongo.GetPlayers().Wait();
+            //using (zip)
+            //{
+            //    var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
+            //    var repo = new MSSqlRepository();
+
+            //    repo.FillPlayersFromZip(teams);
+            //}
+
         }
     }
 }

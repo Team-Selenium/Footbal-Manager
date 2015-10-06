@@ -30,6 +30,7 @@
         {
             this.CreateSqlServerDb = new System.Windows.Forms.Button();
             this.GetMongoData = new System.Windows.Forms.Button();
+            this.FillDatFromZip = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateSqlServerDb
@@ -44,7 +45,7 @@
             // 
             // GetMongoData
             // 
-            this.GetMongoData.Location = new System.Drawing.Point(79, 100);
+            this.GetMongoData.Location = new System.Drawing.Point(79, 89);
             this.GetMongoData.Name = "GetMongoData";
             this.GetMongoData.Size = new System.Drawing.Size(132, 23);
             this.GetMongoData.TabIndex = 1;
@@ -52,11 +53,22 @@
             this.GetMongoData.UseVisualStyleBackColor = true;
             this.GetMongoData.Click += new System.EventHandler(this.GetMongoData_Click);
             // 
+            // FillDatFromZip
+            // 
+            this.FillDatFromZip.Location = new System.Drawing.Point(79, 132);
+            this.FillDatFromZip.Name = "FillDatFromZip";
+            this.FillDatFromZip.Size = new System.Drawing.Size(132, 23);
+            this.FillDatFromZip.TabIndex = 2;
+            this.FillDatFromZip.Text = "Fill Data from Zip";
+            this.FillDatFromZip.UseVisualStyleBackColor = true;
+            this.FillDatFromZip.Click += new System.EventHandler(this.FillDatFromZip_Click);
+            // 
             // FootballManagerClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.FillDatFromZip);
             this.Controls.Add(this.GetMongoData);
             this.Controls.Add(this.CreateSqlServerDb);
             this.Name = "FootballManagerClient";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button CreateSqlServerDb;
         private System.Windows.Forms.Button GetMongoData;
+        private System.Windows.Forms.Button FillDatFromZip;
     }
 }
 
