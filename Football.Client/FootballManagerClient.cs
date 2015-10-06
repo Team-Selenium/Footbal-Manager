@@ -48,14 +48,18 @@ namespace Football.Client
 
         private void FillDatFromZip_Click(object sender, EventArgs e)
         {
-            var zip = ZipFile.Open("../../../Players.zip", ZipArchiveMode.Read);
+            var openFileDialog = new OpenFileDialog();
+            var repo = new MSSqlRepository();
 
-            using (zip)
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
-                var repo = new MSSqlRepository();
-
-                repo.FillPlayersFromZip(teams);
+                var filePath = openFileDialog.FileName;
+                var zip = ZipFile.Open(filePath, ZipArchiveMode.Read);
+                using (zip)
+                {
+                    var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
+                    repo.FillPlayersFromZip(teams);
+                }
             }
         }
     }
