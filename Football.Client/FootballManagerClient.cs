@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
@@ -23,44 +24,84 @@ namespace Football.Client
         private async void CreateSqlServerDb_Click(object sender, EventArgs e)
         {
             var repo = new MSSqlRepository();
-            await repo.CreteDb();
+            try
+            {
+                await repo.CreteDb();
+                MessageBox.Show("The db is created", "Db creation", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                
+                // Find appropriate exception
+            }
+           
 
         }
 
         private async void GetMongoData_Click(object sender, EventArgs e)
         {
-            var repo = new MongoDbRepository();
-
-            var teams = (await repo.GetData()).ToList();
-
-            var ctx = new FootballContext();
-
-            foreach (var team in teams)
+            
+            try
             {
-                if (!ctx.Teams.Any(pl => pl.Id == team.Id))
-                {
-                    ctx.Teams.Add(team);
-                }
-            }
+                var repo = new MongoDbRepository();
 
-            ctx.SaveChanges();
+                var teams = (await repo.GetData()).ToList();
+                
+                var ctx = new FootballContext();
+                using (ctx)
+                {
+                    foreach (var team in teams)
+                    {
+                        if (!ctx.Teams.Any(pl => pl.Id == team.Id))
+                        {
+                            ctx.Teams.Add(team);
+                        }
+                    }
+
+                    ctx.SaveChanges();
+                }
+
+                MessageBox.Show("The teams are inserted", "Teams insert", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (DataException)
+            {
+
+                MessageBox.Show("No connection to MongoDb!!!", "MongoDb", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            
+            
         }
 
         private void FillDatFromZip_Click(object sender, EventArgs e)
         {
             var openFileDialog = new OpenFileDialog();
             var repo = new MSSqlRepository();
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                var filePath = openFileDialog.FileName;
-                var zip = ZipFile.Open(filePath, ZipArchiveMode.Read);
-                using (zip)
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
-                    repo.FillPlayersFromZip(teams);
+                    var filePath = openFileDialog.FileName;
+                    var zip = ZipFile.Open(filePath, ZipArchiveMode.Read);
+                    using (zip)
+                    {
+                        var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
+                        repo.FillPlayersFromZip(teams);
+                    }
                 }
+
+                MessageBox.Show("The players are inserted", "Players insert", MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
+            catch (IOException)
+            {
+
+                MessageBox.Show("Error reading file!", "Players insert", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            
         }
     }
 }

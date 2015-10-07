@@ -13,7 +13,6 @@ namespace MsSql.Data
     {
         public async Task CreteDb()
         {
-
             using (var ctx = new FootballContext())
             {
                 await ctx.Players.ToListAsync();
