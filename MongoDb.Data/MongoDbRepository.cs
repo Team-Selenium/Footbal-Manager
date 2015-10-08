@@ -30,7 +30,7 @@ namespace MongoDb.Data
             {
                 throw new DataException();
             }
-            //if(collection)
+
             var teams = (await collection.Find(new BsonDocument()).ToListAsync())
             .Select(bs => BsonSerializer.Deserialize<Team>(bs)).ToList();
 
