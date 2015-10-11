@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.OleDb;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -24,41 +27,75 @@ namespace Utilities
                 {
                     using (var ms = new MemoryStream())
                     {
-                        CopyStream(entry.Open(), ms);
-
-                        var excelReader = ExcelReaderFactory.CreateBinaryReader(ms);
-                        excelReader.IsFirstRowAsColumnNames = true;
-                        var dataSet = excelReader.AsDataSet();
-
-                        var team = entry.FullName.Split('.')[0];
-
-                        if (!teamPlayers.ContainsKey(team))
+                        var file = File.Create("../../../temp.xls");
+                        using (file)
                         {
-                            teamPlayers.Add(team, new List<Player>());
+
+                            CopyStream(entry.Open(), ms);
+                            ms.WriteTo(file);
                         }
-                        
+                    }
 
-                        for (int i = 0; i < dataSet.Tables.Count; i++)
+                    var connection = new OleDbConnection();
+                    //ex.ConnectionString.
+
+                    var connectionString = new OleDbConnectionStringBuilder
                         {
-                            for (int j = 0; j < dataSet.Tables[i].Rows.Count; j++)
-                            {
-                                var player = new Player()
-                                {
-                                    FirstName = dataSet.Tables[i].Rows[j][1].ToString(),
-                                    LastName = dataSet.Tables[i].Rows[j][2].ToString(),
-                                    Number = int.Parse(dataSet.Tables[i].Rows[j][3].ToString()),
-                                    Position =
-                                        (Position) Enum.Parse(typeof(Position),dataSet.Tables[i].Rows[j][4].ToString()),
-                                    Salary = decimal.Parse(dataSet.Tables[i].Rows[j][6].ToString()),
-                                };
+                            {"Provider", "Microsoft.ACE.OLEDB.12.0"},
+                            {"Extended Properties", "Excel 12.0 XML"},
+                            {"Data Source","../../../temp.xls"}
+                        };
 
-                                teamPlayers[team].Add(player);
+
+                    connection.ConnectionString = connectionString.ToString();
+
+                    using (connection)
+                    {
+                        connection.Open();
+
+                        var excelSchema = connection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+
+                        var sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
+
+                        var oleDbCommand = new OleDbCommand("SELECT * FROM [" + sheetName + "]", connection);
+
+
+                        using (var adapter = new OleDbDataAdapter(oleDbCommand))
+                        {
+                            var dataSet = new DataSet();
+                            adapter.Fill(dataSet);
+
+                            using (var reader = dataSet.CreateDataReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    var team = entry.FullName.Split('.')[0];
+
+                                    if (!teamPlayers.ContainsKey(team))
+                                    {
+                                        teamPlayers.Add(team, new List<Player>());
+                                    }
+
+                                    var player = new Player()
+                                    {
+                                        FirstName = reader["FirstName"].ToString(),
+                                        LastName = reader["LastName"].ToString(),
+                                        Number = int.Parse(reader["Number"].ToString()),
+                                        Position =
+                                            (Position)Enum.Parse(typeof(Position), reader["Position"].ToString()),
+                                        Salary = decimal.Parse(reader["Salary"].ToString()),
+                                    };
+                                    Console.WriteLine(player.FirstName);
+                                    teamPlayers[team].Add(player);
+                                }
                             }
                         }
                     }
                 }
-            }
+                
 
+            }
+            File.Delete("../../../temp.xls");
             return teamPlayers;
         }
 

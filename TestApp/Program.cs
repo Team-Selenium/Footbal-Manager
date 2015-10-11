@@ -15,15 +15,15 @@ namespace TestApp
     {
         static void Main(string[] args)
         {
-            //var zip = System.IO.Compression.ZipFile.Open("../../../Book1.zip", ZipArchiveMode.Read);
+            var zip = System.IO.Compression.ZipFile.Open("../../../Players.zip", ZipArchiveMode.Read);
 
-            //using (zip)
-            //{
-            //    var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
-            //    var repo = new MSSqlRepository();
+            using (zip)
+            {
+                var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
+                //var repo = new MSSqlRepository();
 
-            //    repo.FillPlayersFromZip(teams);
-            //}
+                //repo.FillPlayersFromZip(teams);
+            }
 
         }
     }
