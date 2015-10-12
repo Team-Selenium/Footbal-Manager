@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="matches">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="match">
+          <xs:complexType>
+            <xs:attribute name="id" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="homeTeamId" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="awayTeamId" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="stadiumId" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="attendance" type="xs:unsignedShort" use="required" />
+            <xs:attribute name="homeScore" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="awayScore" type="xs:unsignedByte" use="required" />
+            <xs:attribute name="date" type="xs:date" use="required" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

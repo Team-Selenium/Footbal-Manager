@@ -25,10 +25,9 @@ namespace MongoDb.Data
 
         public async Task<IList<Team>> GetData()
         {
-
             if (client.Cluster.Description.State == ClusterState.Disconnected)
             {
-                throw new DataException();
+                throw new DataException("mongo connection");
             }
 
             var teams = (await collection.Find(new BsonDocument()).ToListAsync())

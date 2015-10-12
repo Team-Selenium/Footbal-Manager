@@ -8,23 +8,29 @@ using ICSharpCode.SharpZipLib.Zip;
 using MongoDb.Data;
 using MsSql.Data;
 using Utilities;
+using XML.Data;
 
 namespace TestApp
 {
     class Program
     {
+        private const string zipPlayersPath = "../../../Data Sources/ZIP/Players.zip";
+        private const string xmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
+
         static void Main(string[] args)
         {
-            var zip = System.IO.Compression.ZipFile.Open("../../../Players.zip", ZipArchiveMode.Read);
+            //var zip = System.IO.Compression.ZipFile.Open(zipPlayersPath, ZipArchiveMode.Read);
 
-            using (zip)
-            {
-                var teams = Utilities.ExcelUtils.GetAllPlayers(zip);
-                //var repo = new MSSqlRepository();
+            //using (zip)
+            //{
+            //    var teams = ExcelUtils.GetAllPlayers(zip);
+            //   // var repo = new MSSqlRepository();
 
-                //repo.FillPlayersFromZip(teams);
-            }
+            //    //repo.FillPlayersFromZip(teams);
+            //}
 
+            var xmlOperator = new XmlOperator();
+            xmlOperator.GetAllMatches(xmlMatchesPath);
         }
     }
 }

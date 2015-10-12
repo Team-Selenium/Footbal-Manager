@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<matches>
+  <match id="1" homeTeamId="1" awayTeamId="2" stadiumId="1" attendance="3000" homeScore="2" awayScore="1" date="2015-08-22"/>
+  <match id="2" homeTeamId="2" awayTeamId="3" stadiumId="2" attendance="2000" homeScore="3" awayScore="2" date="2015-09-22"/>
+  <match id="3" homeTeamId="3" awayTeamId="1" stadiumId="3" attendance="1000" homeScore="4" awayScore="3" date="2015-10-22"/>
+</matches>

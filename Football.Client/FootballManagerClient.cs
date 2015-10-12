@@ -40,8 +40,7 @@ namespace Football.Client
         }
 
         private async void GetMongoData_Click(object sender, EventArgs e)
-        {
-            
+        {          
             try
             {
                 var repo = new MongoDbRepository();

@@ -93,6 +93,10 @@
       <Project>{12e4ee1a-c38c-461a-923b-b4fc79c846b6}</Project>
       <Name>Utilities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\XML.Data\XML.Data.csproj">
+      <Project>{7e4f9c98-3544-4eca-a718-29ea3f5dbfbc}</Project>
+      <Name>XML.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
