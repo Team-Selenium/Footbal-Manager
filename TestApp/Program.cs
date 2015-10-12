@@ -30,7 +30,14 @@ namespace TestApp
             //}
 
             var xmlOperator = new XmlOperator();
-            xmlOperator.GetAllMatches(xmlMatchesPath);
+            var matches=xmlOperator.GetAllMatches(xmlMatchesPath);
+
+            foreach (var match in matches)
+            {
+                Console.WriteLine("Match Id: "+match.Id);
+                Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
+                Console.WriteLine("Attendance: "+match.Attendance);
+            }
         }
     }
 }

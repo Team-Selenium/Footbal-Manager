@@ -3,9 +3,10 @@
     using System.Collections.Generic;
 
     using Football.Models;
+    using Models;
 
     public interface IXmlOperator
     {
-        ICollection<Match> GetAllMatches(string path);
+        IEnumerable<MatchAdapter> GetAllMatches(string path);
     }
 }

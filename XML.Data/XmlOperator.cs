@@ -15,21 +15,22 @@
 
     public class XmlOperator : IXmlOperator
     {
-        public ICollection<Match> GetAllMatches(string path)
+        public IEnumerable<MatchAdapter> GetAllMatches(string path)
         {
             XDocument doc = XDocument.Load(path);
-            var matches = doc.Descendants("match");
+            var xmlFormatMatches = doc.Descendants("match");
+            var pocoMatches = new List<MatchAdapter>();
 
-            foreach (var  match in matches)
+            foreach (var  match in xmlFormatMatches)
             {
-                Console.WriteLine(match.ToString());
                 StringReader reader = new StringReader(match.ToString());
                 XmlSerializer mySerializer = new XmlSerializer(typeof(MatchAdapter));
                 MatchAdapter current=(MatchAdapter)mySerializer.Deserialize(reader);
-                Console.WriteLine(current.StadiumId);
+
+                pocoMatches.Add(current);
             }
 
-            return new List<Match>();
+            return pocoMatches;
         }
     }
 }
