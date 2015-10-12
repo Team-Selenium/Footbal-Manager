@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="contracts\IXmlOperator.cs" />
     <Compile Include="Models\MatchAdapter.cs" />
+    <Compile Include="Models\PlayerAdapter.cs" />
     <Compile Include="XmlOperator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

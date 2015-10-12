@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<players>
+  <player id="1" firstName="Gosho" lastName="Igracha" number="1" position="Defender" teamId="1" salary="1000"/>
+  <player id="2" homeTeamId="Pesho" awayTeamId="Surcerazbivacha" number="2" position="Midfielder" teamId="2" salary="2000"/>
+  <player id="3" homeTeamId="Kolio" awayTeamId="Maistora" number="3" position="Forward" teamid="3" salary="3000" />
+</players>

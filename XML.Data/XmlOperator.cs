@@ -32,5 +32,23 @@
 
             return pocoMatches;
         }
+
+        public IEnumerable<PlayerAdapter> GetAllPlayers(string path)
+        {
+            XDocument doc = XDocument.Load(path);
+            var xmlFormatPlayers = doc.Descendants("player");
+            var pocoPlayers = new List<PlayerAdapter>();
+
+            foreach (var player in xmlFormatPlayers)
+            {
+                StringReader reader = new StringReader(player.ToString());
+                XmlSerializer mySerializer = new XmlSerializer(typeof(PlayerAdapter));
+                PlayerAdapter current = (PlayerAdapter)mySerializer.Deserialize(reader);
+
+                pocoPlayers.Add(current);
+            }
+
+            return pocoPlayers;
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace TestApp
     {
         private const string zipPlayersPath = "../../../Data Sources/ZIP/Players.zip";
         private const string xmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
+        private const string xmlPlayersPath= "../../../Data Sources/XML/Players.xml";
 
         static void Main(string[] args)
         {
@@ -31,12 +32,19 @@ namespace TestApp
 
             var xmlOperator = new XmlOperator();
             var matches=xmlOperator.GetAllMatches(xmlMatchesPath);
+            var players = xmlOperator.GetAllPlayers(xmlPlayersPath);
 
             foreach (var match in matches)
             {
                 Console.WriteLine("Match Id: "+match.Id);
                 Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
                 Console.WriteLine("Attendance: "+match.Attendance);
+            }
+
+            foreach (var player in players)
+            {
+                Console.WriteLine("Player Id: " + player.Id);
+                Console.WriteLine("HomeTeam Id: " + player.Position);
             }
         }
     }
