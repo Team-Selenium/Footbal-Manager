@@ -1,8 +1,6 @@
-﻿namespace XML.Data.contracts
+﻿namespace XML.Data.Contracts
 {
     using System.Collections.Generic;
-
-    using Football.Models;
     using Models;
 
     public interface IXmlOperator

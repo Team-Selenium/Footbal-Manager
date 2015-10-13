@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Migrations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Football.Models;
-
-namespace MsSql.Data
+﻿namespace MsSql.Data
 {
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using Football.Models;
+
     public class MSSqlRepository
     {
         public async Task CreteDb()
@@ -17,7 +14,6 @@ namespace MsSql.Data
             {
                 await ctx.Players.ToListAsync();
                 await ctx.SaveChangesAsync();
-
             }
         }
 

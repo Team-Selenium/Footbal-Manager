@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-
-namespace XML.Data.Models
+﻿namespace XML.Data.Models
 {
+    using System;
+    using System.Xml.Serialization;
+
     [XmlRoot(ElementName = "match")]
     public class MatchAdapter
     {
@@ -14,13 +10,13 @@ namespace XML.Data.Models
         public int Id { get; set; }
 
         [XmlAttribute("homeTeamId")]
-        public int  HomeTeamId { get; set; }
+        public int HomeTeamId { get; set; }
 
         [XmlAttribute("awayTeamId")]
-        public int  AwayTeamId { get; set; }
+        public int AwayTeamId { get; set; }
 
         [XmlAttribute("stadiumId")]
-        public  int StadiumId { get; set; }
+        public int StadiumId { get; set; }
 
         [XmlAttribute("attendance")]
         public int Attendance { get; set; }

@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using MongoDb.Data;
-using MsSql.Data;
-
-namespace Football.Client
+﻿namespace Football.Client
 {
+    using System;
+    using System.Data;
+    using System.IO;
+    using System.IO.Compression;
+    using System.Linq;
+    using System.Windows.Forms;
+    using MongoDb.Data;
+    using MsSql.Data;
+
     public partial class FootballManagerClient : Form
     {
         public FootballManagerClient()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private async void CreateSqlServerDb_Click(object sender, EventArgs e)
@@ -27,26 +22,26 @@ namespace Football.Client
             try
             {
                 await repo.CreteDb();
-                MessageBox.Show("The db is created", "Db creation", MessageBoxButtons.OK,
+                MessageBox.Show(
+                    "The db is created",
+                    "Db creation",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                
                 // Find appropriate exception
             }
-           
-
         }
 
         private async void GetMongoData_Click(object sender, EventArgs e)
-        {          
+        {
             try
             {
                 var repo = new MongoDbRepository();
 
                 var teams = (await repo.GetData()).ToList();
-                
+
                 var ctx = new FootballContext();
                 using (ctx)
                 {
@@ -61,17 +56,20 @@ namespace Football.Client
                     ctx.SaveChanges();
                 }
 
-                MessageBox.Show("The teams are inserted", "Teams insert", MessageBoxButtons.OK,
+                MessageBox.Show(
+                    "The teams are inserted",
+                    "Teams insert",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
             catch (DataException)
             {
-
-                MessageBox.Show("No connection to MongoDb!!!", "MongoDb", MessageBoxButtons.OK,
+                MessageBox.Show(
+                    "No connection to MongoDb!!!",
+                    "MongoDb",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-            
-            
         }
 
         private void FillDatFromZip_Click(object sender, EventArgs e)
@@ -91,16 +89,20 @@ namespace Football.Client
                     }
                 }
 
-                MessageBox.Show("The players are inserted", "Players insert", MessageBoxButtons.OK,
+                MessageBox.Show(
+                    "The players are inserted",
+                    "Players insert",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
             catch (IOException)
             {
-
-                MessageBox.Show("Error reading file!", "Players insert", MessageBoxButtons.OK,
+                MessageBox.Show(
+                    "Error reading file!",
+                    "Players insert",
+                    MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-            
         }
     }
 }

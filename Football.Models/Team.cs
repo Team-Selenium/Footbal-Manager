@@ -1,18 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-
-namespace Football.Models
+﻿namespace Football.Models
 {
+    using System.Collections.Generic;
+
     public class Team
     {
-        private ICollection<Player> players; 
-        private ICollection<Match> matches; 
+        private ICollection<Player> players;
+        private ICollection<Match> matches;
 
         public Team()
         {

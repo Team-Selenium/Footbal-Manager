@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="contracts\IXmlOperator.cs" />
+    <Compile Include="Contracts\IXmlOperator.cs" />
     <Compile Include="Models\MatchAdapter.cs" />
     <Compile Include="Models\PlayerAdapter.cs" />
     <Compile Include="XmlOperator.cs" />

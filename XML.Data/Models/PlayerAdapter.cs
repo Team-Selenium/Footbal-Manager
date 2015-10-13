@@ -1,15 +1,10 @@
-﻿using Football.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-
-namespace XML.Data.Models
+﻿namespace XML.Data.Models
 {
+    using System.Xml.Serialization;
+    using Football.Models;
+
     [XmlRoot(ElementName = "player")]
-    public  class PlayerAdapter
+    public class PlayerAdapter
     {
         [XmlAttribute("id")]
         public int Id { get; set; }

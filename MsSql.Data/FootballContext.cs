@@ -1,11 +1,8 @@
-using Football.Models;
-using MsSql.Data.Migrations;
-
 namespace MsSql.Data
 {
-    using System;
     using System.Data.Entity;
-    using System.Linq;
+    using Football.Models;
+    using Migrations;
 
     public class FootballContext : DbContext
     {
@@ -16,19 +13,24 @@ namespace MsSql.Data
             Database.SetInitializer(migrationStrategy);
         }
 
+        public virtual DbSet<Team> Teams { get; set; }
+
+        public virtual DbSet<Player> Players { get; set; }
+
+        public virtual DbSet<Stadium> Stadiums { get; set; }
+
+        public virtual DbSet<Match> Matches { get; set; }
+
+        public virtual DbSet<Coach> Coaches { get; set; }
+
+        public virtual DbSet<Owner> Owners { get; set; }
+
+        public virtual DbSet<Town> Towns { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Team>().HasMany(t => t.Matches).WithRequired(t => t.HomeTeam);
             modelBuilder.Entity<Team>().HasMany(t => t.Matches).WithRequired(t => t.AwayTeam);
         }
-
-        public virtual DbSet<Team> Teams { get; set; }
-        public virtual DbSet<Player> Players { get; set; }
-        public virtual DbSet<Stadium> Stadiums { get; set; }
-        public virtual DbSet<Match> Matches { get; set; }
-        public virtual DbSet<Coach> Coaches { get; set; }
-        public virtual DbSet<Owner> Owners { get; set; }
-        public virtual DbSet<Town> Towns { get; set; }
     }
-
 }

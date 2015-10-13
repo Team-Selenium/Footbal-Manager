@@ -1,29 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO.Compression;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ICSharpCode.SharpZipLib.Zip;
-using MongoDb.Data;
-using MsSql.Data;
-using Utilities;
-using XML.Data;
-
-namespace TestApp
+﻿namespace TestApp
 {
-    class Program
+    using System;
+    using XML.Data;
+
+    internal class Program
     {
-        private const string zipPlayersPath = "../../../Data Sources/ZIP/Players.zip";
-        private const string xmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
-        private const string xmlPlayersPath= "../../../Data Sources/XML/Players.xml";
+        private const string ZipPlayersPath = "../../../Data Sources/ZIP/Players.zip";
+        private const string XmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
+        private const string XmlPlayersPath = "../../../Data Sources/XML/Players.xml";
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            //var zip = System.IO.Compression.ZipFile.Open(zipPlayersPath, ZipArchiveMode.Read);
+            // var zip = System.IO.Compression.ZipFile.Open(ZipPlayersPath, ZipArchiveMode.Read);
 
-            //using (zip)
-            //{
+            // using (zip)
+            // {
             //    var teams = ExcelUtils.GetAllPlayers(zip);
             //   // var repo = new MSSqlRepository();
 
@@ -31,14 +22,14 @@ namespace TestApp
             //}
 
             var xmlOperator = new XmlOperator();
-            var matches=xmlOperator.GetAllMatches(xmlMatchesPath);
-            var players = xmlOperator.GetAllPlayers(xmlPlayersPath);
+            var matches = xmlOperator.GetAllMatches(XmlMatchesPath);
+            var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
 
             foreach (var match in matches)
             {
-                Console.WriteLine("Match Id: "+match.Id);
+                Console.WriteLine("Match Id: " + match.Id);
                 Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
-                Console.WriteLine("Attendance: "+match.Attendance);
+                Console.WriteLine("Attendance: " + match.Attendance);
             }
 
             foreach (var player in players)

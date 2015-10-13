@@ -1,21 +1,17 @@
 namespace MsSql.Data.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<MsSql.Data.FootballContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<FootballContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
+            this.AutomaticMigrationsEnabled = true;
+            this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(MsSql.Data.FootballContext context)
+        protected override void Seed(FootballContext context)
         {
-            
         }
     }
 }

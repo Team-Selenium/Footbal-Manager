@@ -1,24 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.OleDb;
-using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.IO;
-using System.IO.Compression;
-using System.Linq;
-using Excel;
-using Football.Models;
-using ICSharpCode.SharpZipLib.Zip;
-
-namespace Utilities
+﻿namespace Utilities
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data;
+    using System.Data.OleDb;
+    using System.IO;
+    using System.IO.Compression;
+    using Football.Models;
+
     public static class ExcelUtils
     {
         public static Dictionary<string, List<Player>> GetAllPlayers(ZipArchive zip)
         {
-            List<List<string>> sales = new List<List<string>>();
+            var sales = new List<List<string>>();
             var teamPlayers = new Dictionary<string, List<Player>>();
 
             foreach (var entry in zip.Entries)
@@ -30,21 +24,18 @@ namespace Utilities
                         var file = File.Create("../../../temp.xls");
                         using (file)
                         {
-
                             CopyStream(entry.Open(), ms);
                             ms.WriteTo(file);
                         }
                     }
 
                     var connection = new OleDbConnection();
-                    //ex.ConnectionString.
-
                     var connectionString = new OleDbConnectionStringBuilder
-                        {
-                            {"Provider", "Microsoft.ACE.OLEDB.12.0"},
-                            {"Extended Properties", "Excel 12.0 XML"},
-                            {"Data Source","../../../temp.xls"}
-                        };
+                    {
+                        { "Provider", "Microsoft.ACE.OLEDB.12.0" },
+                        { "Extended Properties", "Excel 12.0 XML" },
+                        { "Data Source", "../../../temp.xls" }
+                    };
 
 
                     connection.ConnectionString = connectionString.ToString();
@@ -92,20 +83,17 @@ namespace Utilities
                         }
                     }
                 }
-                
-
             }
+
             File.Delete("../../../temp.xls");
             return teamPlayers;
         }
 
 
-
-
         private static void CopyStream(Stream input, Stream output)
         {
             var buffer = new byte[2048];
-            int read = input.Read(buffer, 0, buffer.Length);
+            var read = input.Read(buffer, 0, buffer.Length);
             while (read > 0)
             {
                 output.Write(buffer, 0, read);
