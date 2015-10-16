@@ -4,7 +4,7 @@
     using Football.Models;
 
     [XmlRoot(ElementName = "player")]
-    public class PlayerAdapter
+    public class DtoPlayer
     {
         [XmlAttribute("id")]
         public int Id { get; set; }

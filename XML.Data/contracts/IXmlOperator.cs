@@ -5,8 +5,8 @@
 
     public interface IXmlOperator
     {
-        IEnumerable<MatchAdapter> GetAllMatches(string path);
+        IEnumerable<DtoMatch> GetAllMatches(string path);
 
-        IEnumerable<PlayerAdapter> GetAllPlayers(string path);
+        IEnumerable<DtoPlayer> GetAllPlayers(string path);
     }
 }

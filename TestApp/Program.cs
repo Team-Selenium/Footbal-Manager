@@ -1,5 +1,6 @@
 ﻿namespace TestApp
 {
+    using Pdf.Data;
     using System;
     using XML.Data;
 
@@ -8,6 +9,7 @@
         private const string ZipPlayersPath = "../../../Data Sources/ZIP/Players.zip";
         private const string XmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
         private const string XmlPlayersPath = "../../../Data Sources/XML/Players.xml";
+        private const string PdfReportPath = "../../../Data Sources/PDF/Report.pdf";
 
         private static void Main(string[] args)
         {
@@ -21,22 +23,25 @@
             //    //repo.FillPlayersFromZip(teams);
             //}
 
-            var xmlOperator = new XmlOperator();
-            var matches = xmlOperator.GetAllMatches(XmlMatchesPath);
-            var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
+            //var xmlOperator = new XmlOperator();
+            //var matches = xmlOperator.GetAllMatches(XmlMatchesPath);
+            //var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
 
-            foreach (var match in matches)
-            {
-                Console.WriteLine("Match Id: " + match.Id);
-                Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
-                Console.WriteLine("Attendance: " + match.Attendance);
-            }
+            //foreach (var match in matches)
+            //{
+            //    Console.WriteLine("Match Id: " + match.Id);
+            //    Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
+            //    Console.WriteLine("Attendance: " + match.Attendance);
+            //}
 
-            foreach (var player in players)
-            {
-                Console.WriteLine("Player Id: " + player.Id);
-                Console.WriteLine("HomeTeam Id: " + player.Position);
-            }
+            //foreach (var player in players)
+            //{
+            //    Console.WriteLine("Player Id: " + player.Id);
+            //    Console.WriteLine("HomeTeam Id: " + player.Position);
+            //}
+
+            PdfGenerator pdfGenerator = new PdfGenerator();
+            pdfGenerator.GeneratePdfDocument(PdfReportPath);
         }
     }
 }

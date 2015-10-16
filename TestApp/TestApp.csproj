@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestApp</RootNamespace>
     <AssemblyName>TestApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,10 @@
     <ProjectReference Include="..\MySql.Data\MySql.Data.csproj">
       <Project>{fd10faf1-ceb4-47e7-a7a0-e7f4d7485d97}</Project>
       <Name>MySql.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PdfGenerator\Pdf.Data.csproj">
+      <Project>{2abe0dff-64e8-41db-8151-99d0feb32972}</Project>
+      <Name>Pdf.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Sqlite.Data\Sqlite.Data.csproj">
       <Project>{a3aed09a-578e-46bb-9fed-de14275f4f4a}</Project>
