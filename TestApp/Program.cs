@@ -1,5 +1,6 @@
 ﻿namespace TestApp
 {
+    using MsSql.Data;
     using Pdf.Data;
     using System;
     using System.Collections.Generic;
@@ -40,15 +41,15 @@
             //    Console.WriteLine("Player Id: " + player.Id);
             //    Console.WriteLine("HomeTeam Id: " + player.Position);
             //}
-            var columnNames = new string[] { "name", "team", "number" };
-            var player1= new string[] { "Gosho", "Ludogorec", "1" };
-            var player2 = new string[] { "Barbuka", "Nacionalniq", "9" };
-            var allPlayers = new List<string[]>();
-            allPlayers.Add(player1);
-            allPlayers.Add(player2);
+            //    var columnNames = new string[] { "name", "team", "number" };
+            //    var player1= new string[] { "Gosho", "Ludogorec", "1" };
+            //    var player2 = new string[] { "Barbuka", "Nacionalniq", "9" };
+            //    var allPlayers = new List<string[]>();
+            //    allPlayers.Add(player1);
+            //    allPlayers.Add(player2);
 
-            PdfGenerator pdfGenerator = new PdfGenerator();
-            pdfGenerator.GeneratePdfDocument(PdfReportPath, columnNames, allPlayers);
+            //    PdfGenerator pdfGenerator = new PdfGenerator();
+            //    pdfGenerator.GeneratePdfDocument(PdfReportPath, columnNames, allPlayers);
         }
     }
 }

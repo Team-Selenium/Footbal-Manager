@@ -5,6 +5,8 @@
     using System.Linq;
     using System.Threading.Tasks;
     using Football.Models;
+    using Newtonsoft.Json;
+    using FootballManager.DtoModels;
 
     public class MSSqlRepository
     {
@@ -16,6 +18,28 @@
                 await ctx.SaveChangesAsync();
             }
         }
+
+        public ICollection<DtoTeamReport> GetTeamReport()
+        {
+            var ctx = new FootballContext();
+
+            using (ctx)
+            {
+                var teamReports = ctx.Teams.Select(t => new DtoTeamReport
+                {
+                    Id = t.Id,
+                    Name = t.Name,
+                    Owner = t.Owner.FirstName + " " + t.Owner.LastName,
+                    Coach = t.Coach.FirstName + " " + t.Coach.LastName,
+                    NumberOfPlayers = t.Players.Count,
+                    NumbersOfMatches = t.Matches.Count
+                }).ToList();
+
+                return teamReports;
+            }
+        }
+
+
 
         public void FillPlayersFromZip(Dictionary<string, List<Player>> teams)
         {
