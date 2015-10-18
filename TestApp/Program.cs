@@ -29,16 +29,16 @@
             //    //repo.FillPlayersFromZip(teams);
             //}
 
-            //var xmlOperator = new XmlOperator();
-            //var matches = xmlOperator.GetAllMatches(XmlMatchesPath);
+            var xmlOperator = new XmlToDtoMatchConverter(XmlMatchesPath);
+            var matches = xmlOperator.GetAllDtoMatches();
             //var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
 
-            //foreach (var match in matches)
-            //{
-            //    Console.WriteLine("Match Id: " + match.Id);
-            //    Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
-            //    Console.WriteLine("Attendance: " + match.Attendance);
-            //}
+            foreach (var match in matches)
+            {
+                Console.WriteLine("Match Id: " + match.Id);
+                Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
+                Console.WriteLine("Attendance: " + match.Attendance);
+            }
 
             //foreach (var player in players)
             //{

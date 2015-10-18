@@ -32,6 +32,7 @@
             this.CreateSqlServerDb = new System.Windows.Forms.Button();
             this.GetMongoData = new System.Windows.Forms.Button();
             this.FillDatFromZip = new System.Windows.Forms.Button();
+            this.FillFromXml_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateSqlServerDb
@@ -64,11 +65,22 @@
             this.FillDatFromZip.UseVisualStyleBackColor = true;
             this.FillDatFromZip.Click += new System.EventHandler(this.FillDatFromZip_Click);
             // 
+            // FillFromXml_btn
+            // 
+            this.FillFromXml_btn.Location = new System.Drawing.Point(79, 180);
+            this.FillFromXml_btn.Name = "FillFromXml_btn";
+            this.FillFromXml_btn.Size = new System.Drawing.Size(132, 23);
+            this.FillFromXml_btn.TabIndex = 3;
+            this.FillFromXml_btn.Text = "Fill Data from Xml ";
+            this.FillFromXml_btn.UseVisualStyleBackColor = true;
+            this.FillFromXml_btn.Click += new System.EventHandler(this.FillFromXml_btn_Click);
+            // 
             // FootballManagerClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.FillFromXml_btn);
             this.Controls.Add(this.FillDatFromZip);
             this.Controls.Add(this.GetMongoData);
             this.Controls.Add(this.CreateSqlServerDb);
@@ -83,5 +95,6 @@
         private System.Windows.Forms.Button CreateSqlServerDb;
         private System.Windows.Forms.Button GetMongoData;
         private System.Windows.Forms.Button FillDatFromZip;
+        private System.Windows.Forms.Button FillFromXml_btn;
     }
 }
