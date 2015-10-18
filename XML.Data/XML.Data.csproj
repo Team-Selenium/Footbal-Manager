@@ -53,7 +53,7 @@
     <Compile Include="Contracts\IXmlToDtoMatchConverter.cs" />
     <Compile Include="DtoMatchToDbMatchConverter.cs" />
     <Compile Include="Models\DtoMatch.cs" />
-    <Compile Include="XmlToDtoConverter.cs" />
+    <Compile Include="XmlToDtoMatchConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -8,9 +8,12 @@
     using System.Windows.Forms;
     using MongoDb.Data;
     using MsSql.Data;
+    using XML.Data;
 
     public partial class FootballManagerClient : Form
     {
+        private const string XmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
+
         public FootballManagerClient()
         {
             this.InitializeComponent();
@@ -113,6 +116,23 @@
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+
+        private void FillFromXml_btn_Click(object sender, EventArgs e)
+        {
+            var repo = new MSSqlRepository();
+            var ctx = new FootballContext();
+            var xmlToDtoConverter = new XmlToDtoMatchConverter(XmlMatchesPath);
+            var dtoToMatchModelConverter = new DtoMatchToDbMatchConverter(xmlToDtoConverter, ctx);
+            var matches = dtoToMatchModelConverter.GetAllMatches();
+
+            repo.FillMatchesFromXml(matches);
+
+            MessageBox.Show(
+                    "The matches are inserted",
+                    "Matches insert",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
         }
     }
 }

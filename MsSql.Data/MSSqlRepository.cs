@@ -39,7 +39,20 @@
             }
         }
 
+        public void FillMatchesFromXml(ICollection<Match> matches)
+        {
+            var ctx = new FootballContext();
 
+            using (ctx)
+            {
+                foreach (var match in matches)
+                {
+                    ctx.Matches.Add(match);
+                }
+
+                ctx.SaveChanges();
+            }
+        }
 
         public void FillPlayersFromZip(Dictionary<string, List<Player>> teams)
         {

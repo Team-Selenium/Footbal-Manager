@@ -6,8 +6,10 @@
     using Football.Models;
     using MsSql.Data;
     using Contracts;
+    using System;
+    using Models;
 
-    class DtoMatchToDbMatchConverter
+    public class DtoMatchToDbMatchConverter
     {
         public DtoMatchToDbMatchConverter(IXmlToDtoMatchConverter DtoModels, FootballContext db)
         {
@@ -34,12 +36,22 @@
 
                 if (areValidTeamIds && isValidStadiumId)
                 {
-  
+                    var matchToAdd = new Match()
+                    {
+                        HomeTeamId = dtoMatch.HomeTeamId,
+                        AwayTeamId = dtoMatch.AwayTeamId,
+                        Attendance = dtoMatch.Attendance,
+                        AwayScore = dtoMatch.AwayScore,
+                        HomeScore = dtoMatch.HomeScore,
+                        Date = dtoMatch.Date,
+                        StadiumId = dtoMatch.StadiumId
+                    };
+
+                    resultMatches.Add(matchToAdd);
                 }
             }
 
-
-            return new List<Match>();
+            return resultMatches;
         }
     }
 }
