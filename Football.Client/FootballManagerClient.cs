@@ -126,7 +126,18 @@
             var dtoToMatchModelConverter = new DtoMatchToDbMatchConverter(xmlToDtoConverter, ctx);
             var matches = dtoToMatchModelConverter.GetAllMatches();
 
-            repo.FillMatchesFromXml(matches);
+            try
+            {
+                repo.FillMatchesFromXml(matches);
+            }
+            catch(Exception)
+            {
+                MessageBox.Show(
+                    "Something bad happened",
+                    "Fatal Error",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
+            }
 
             MessageBox.Show(
                     "The matches are inserted",
