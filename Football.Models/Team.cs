@@ -17,7 +17,11 @@
 
         public string Name { get; set; }
 
+        public int OwnerId { get; set; }
+
         public virtual Owner Owner { get; set; }
+
+        public int CoachId { get; set; }
 
         public virtual Coach Coach { get; set; }
 

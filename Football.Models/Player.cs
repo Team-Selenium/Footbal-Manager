@@ -8,6 +8,8 @@
 
         public string LastName { get; set; }
 
+        public int TeamId { get; set; }
+
         public virtual Team Team { get; set; }
 
         public int Number { get; set; }

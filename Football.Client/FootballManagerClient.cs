@@ -28,9 +28,9 @@
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Find appropriate exception
+                var exmes = ex.Message;
             }
         }
 
