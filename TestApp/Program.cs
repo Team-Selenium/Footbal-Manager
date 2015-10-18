@@ -1,6 +1,7 @@
 ﻿namespace TestApp
 {
     using System;
+    using MsSql.Data;
     using XML.Data;
 
     internal class Program
@@ -11,6 +12,12 @@
 
         private static void Main(string[] args)
         {
+
+            var repo = new MSSqlRepository();
+
+            repo.GetWithDataAccess();
+
+
             // var zip = System.IO.Compression.ZipFile.Open(ZipPlayersPath, ZipArchiveMode.Read);
 
             // using (zip)
@@ -21,22 +28,22 @@
             //    //repo.FillPlayersFromZip(teams);
             //}
 
-            var xmlOperator = new XmlOperator();
-            var matches = xmlOperator.GetAllMatches(XmlMatchesPath);
-            var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
+            //var xmlOperator = new XmlOperator();
+            //var matches = xmlOperator.GetAllMatches(XmlMatchesPath);
+            //var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
 
-            foreach (var match in matches)
-            {
-                Console.WriteLine("Match Id: " + match.Id);
-                Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
-                Console.WriteLine("Attendance: " + match.Attendance);
-            }
+            //foreach (var match in matches)
+            //{
+            //    Console.WriteLine("Match Id: " + match.Id);
+            //    Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
+            //    Console.WriteLine("Attendance: " + match.Attendance);
+            //}
 
-            foreach (var player in players)
-            {
-                Console.WriteLine("Player Id: " + player.Id);
-                Console.WriteLine("HomeTeam Id: " + player.Position);
-            }
+            //foreach (var player in players)
+            //{
+            //    Console.WriteLine("Player Id: " + player.Id);
+            //    Console.WriteLine("HomeTeam Id: " + player.Position);
+            //}
         }
     }
 }
