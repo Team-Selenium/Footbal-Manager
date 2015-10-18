@@ -14,6 +14,7 @@
     {
         private const string ConnectionString = "mongodb://selenium:telerik@ds029814.mongolab.com:29814/football-manager";
         private static readonly MongoClient Client = new MongoClient(ConnectionString);
+        private static readonly IMongoDatabase Database = Client.GetDatabase("football-manager");
 
         private static readonly IMongoCollection<BsonDocument> teamsCollection = Database.GetCollection<BsonDocument>("Teams");
         private static readonly IMongoCollection<BsonDocument> stadiumsCollection = Database.GetCollection<BsonDocument>("Stadiums");
