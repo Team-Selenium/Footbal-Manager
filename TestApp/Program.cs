@@ -4,6 +4,7 @@
     using Pdf.Data;
     using System;
     using System.Collections.Generic;
+    using Utilities;
     using XML.Data;
 
     internal class Program
@@ -15,6 +16,9 @@
 
         private static void Main(string[] args)
         {
+            var repo = new JsonUtils();
+            repo.JsonCreateReports();
+
             // var zip = System.IO.Compression.ZipFile.Open(ZipPlayersPath, ZipArchiveMode.Read);
 
             // using (zip)
