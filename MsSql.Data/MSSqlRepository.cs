@@ -7,6 +7,7 @@
     using Football.Models;
     using Newtonsoft.Json;
     using FootballManager.DtoModels;
+    using Pdf.Data.Models;
 
     public class MSSqlRepository
     {
@@ -90,6 +91,27 @@
                 }
 
                 ctx.SaveChanges();
+            }
+        }
+
+        public Dictionary<string, List<DtoPdfExportTable>> GetDataForPdfExport()
+        {
+            using (var ctx = new FootballContext())
+            {
+                Dictionary<string, List<DtoPdfExportTable>> dataForPdfExport = ctx.Matches
+                     .Select(m => new DtoPdfExportTable
+                     {
+                         Date = m.Date,
+                         Town = m.Stadium.Town.Name,
+                         Stadium = m.Stadium.Name,
+                         HomeTeam = m.HomeTeam.Name,
+                         AwayTeam = m.AwayTeam.Name,
+                         Result = m.HomeScore + " : " + m.AwayScore
+                     })
+                     .GroupBy(g => g.Town)
+                     .ToDictionary(k => k.Key, v => v.ToList());
+
+                return dataForPdfExport;
             }
         }
     }
