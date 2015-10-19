@@ -151,7 +151,7 @@
         {
             try
             {
-                // Write logic here
+                PdfUtils.GeneratePdfReport();
             }
             catch (Exception)
             {
@@ -195,8 +195,7 @@
         {
             try
             {
-                var jsonUtils = new JsonUtils();
-                jsonUtils.JsonCreateReports();
+                JsonUtils.JsonCreateReports();
             }
             catch (Exception)
             {

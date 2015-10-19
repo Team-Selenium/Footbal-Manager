@@ -5,9 +5,9 @@
     using Newtonsoft.Json;
     using System.IO;
 
-    public class JsonUtils
+    public static class JsonUtils
     {
-        public void JsonCreateReports()
+        public static void JsonCreateReports()
         {
             var repo = new MSSqlRepository();
 
@@ -19,7 +19,7 @@
             }
         }
 
-        private void SaveReport(DtoTeamReport report, int id)
+        private static void SaveReport(DtoTeamReport report, int id)
         {
             var jsonReport = JsonConvert.SerializeObject(report, Formatting.Indented);
             File.WriteAllText("../../../Data Sources/JSON/" + id + ".json", jsonReport.ToString());
