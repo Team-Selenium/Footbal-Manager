@@ -14,10 +14,10 @@
   <match id="12" homeTeamId="5" awayTeamId="2" stadiumId="3" attendance="35000" homeScore="2" awayScore="8" date="2015-08-22"/>
   <match id="13" homeTeamId="4" awayTeamId="5" stadiumId="4" attendance="18532" homeScore="8" awayScore="3" date="2015-10-13"/>
   <match id="14" homeTeamId="3" awayTeamId="6" stadiumId="6" attendance="12500" homeScore="5" awayScore="3" date="2015-06-22"/>
-  <match id="15" homeTeamId="9" awayTeamId="4" stadiumId="1" attendance="25000" homeScore="4" awayScore="8" date="2015-09-22"/>
+  <match id="15" homeTeamId="7" awayTeamId="4" stadiumId="5" attendance="25000" homeScore="4" awayScore="8" date="2015-09-22"/>
   <match id="16" homeTeamId="5" awayTeamId="4" stadiumId="3" attendance="35000" homeScore="5" awayScore="3" date="2015-03-17"/>
-  <match id="17" homeTeamId="6" awayTeamId="7" stadiumId="8" attendance="18532" homeScore="8" awayScore="3" date="2015-10-22"/>
+  <match id="17" homeTeamId="6" awayTeamId="7" stadiumId="6" attendance="18532" homeScore="8" awayScore="3" date="2015-10-22"/>
   <match id="18" homeTeamId="5" awayTeamId="2" stadiumId="3" attendance="35000" homeScore="3" awayScore="9" date="2015-04-25"/>
-  <match id="19" homeTeamId="4" awayTeamId="5" stadiumId="7" attendance="70000" homeScore="8" awayScore="3" date="2015-02-15"/>
-  <match id="20" homeTeamId="7" awayTeamId="3" stadiumId="10" attendance="25000" homeScore="5" awayScore="3" date="2015-01-02"/>
+  <match id="19" homeTeamId="4" awayTeamId="5" stadiumId="5" attendance="70000" homeScore="8" awayScore="3" date="2015-02-15"/>
+  <match id="20" homeTeamId="7" awayTeamId="3" stadiumId="1" attendance="25000" homeScore="5" awayScore="3" date="2015-01-02"/>
 </matches>

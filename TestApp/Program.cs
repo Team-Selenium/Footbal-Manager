@@ -16,8 +16,8 @@
 
         private static void Main(string[] args)
         {
-            var repo = new JsonUtils();
-            repo.JsonCreateReports();
+            //var repo = new JsonUtils();
+            //repo.JsonCreateReports();
 
             // var zip = System.IO.Compression.ZipFile.Open(ZipPlayersPath, ZipArchiveMode.Read);
 
@@ -29,16 +29,16 @@
             //    //repo.FillPlayersFromZip(teams);
             //}
 
-            var xmlOperator = new XmlToDtoMatchConverter(XmlMatchesPath);
-            var matches = xmlOperator.GetAllDtoMatches();
-            //var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
+            //var xmlOperator = new XmlToDtoMatchConverter(XmlMatchesPath);
+            //var matches = xmlOperator.GetAllDtoMatches();
+            ////var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
 
-            foreach (var match in matches)
-            {
-                Console.WriteLine("Match Id: " + match.Id);
-                Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
-                Console.WriteLine("Attendance: " + match.Attendance);
-            }
+            //foreach (var match in matches)
+            //{
+            //    Console.WriteLine("Match Id: " + match.Id);
+            //    Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
+            //    Console.WriteLine("Attendance: " + match.Attendance);
+            //}
 
             //foreach (var player in players)
             //{
@@ -46,6 +46,8 @@
             //    Console.WriteLine("HomeTeam Id: " + player.Position);
             //}
 
+
+            PdfUtils.GeneratePdfReport();
         }
     }
 }

@@ -44,7 +44,7 @@
                 var repo = new MongoDbRepository();
 
                 var teams = (await repo.GetTeamsData()).ToList();
-                var stadiums= (await repo.GetStadiumsData()).ToList();
+                var stadiums = (await repo.GetStadiumsData()).ToList();
 
                 var ctx = new FootballContext();
                 using (ctx)
@@ -129,8 +129,14 @@
             try
             {
                 repo.FillMatchesFromXml(matches);
+
+                MessageBox.Show(
+                    "The matches are inserted",
+                    "Matches insert",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show(
                     "Something bad happened",
@@ -138,12 +144,6 @@
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Information);
             }
-
-            MessageBox.Show(
-                    "The matches are inserted",
-                    "Matches insert",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
         }
     }
 }
