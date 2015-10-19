@@ -1,13 +1,7 @@
 ﻿namespace Utilities
 {
-    using System;
-<<<<<<< HEAD
     using System.Diagnostics;
     using System.IO;
-=======
-    using System.IO;
-
->>>>>>> 76c83577eb86989eefb2c8e8bbce823bca0509ac
     using iTextSharp.text;
     using iTextSharp.text.pdf;
     using MsSql.Data;
@@ -15,19 +9,17 @@
     public static class PdfUtils
     {
         private const int RowCountInPdfExport = 5;
-        private const string PdfPath = "../../../Data Sources/PDF/CitiesReport.pdf";
+        private const string PdfPath = @"..\..\..\Data Sources\PDF\";
+        private const string PdfFileName = "CitiesReport.pdf";
 
         public static void GeneratePdfReport()
         {
+            File.Delete(PdfPath + PdfFileName);
             var repo = new MSSqlRepository();
             var pdfData = repo.GetDataForPdfExport();
             var doc = new Document();
 
-<<<<<<< HEAD
-            PdfWriter.GetInstance(doc, new FileStream("../../../Data Sources/PDF/Matches-Report.pdf", FileMode.Create));
-=======
-            PdfWriter.GetInstance(doc, new FileStream(PdfPath, FileMode.Create));
->>>>>>> 76c83577eb86989eefb2c8e8bbce823bca0509ac
+            PdfWriter.GetInstance(doc, new FileStream(PdfPath + PdfFileName, FileMode.Create));
 
             doc.Open();
 
@@ -73,13 +65,7 @@
 
             doc.Add(table);
             doc.Close();
-<<<<<<< HEAD
-
-            Console.WriteLine("PDF export successfull!");
-
-            Process.Start(@"..\..\..\Data Sources\PDF\");
-=======
->>>>>>> 76c83577eb86989eefb2c8e8bbce823bca0509ac
+            Process.Start(PdfPath);
         }
     }
 }

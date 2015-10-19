@@ -132,12 +132,7 @@
                     var teamName = teamInfos[i].TeamName;
                     worksheet.Cells[currentRow, 1].Value = teamName;
 
-<<<<<<< HEAD
-
                     var teamReportForCurrentTeam = teamReports.FirstOrDefault(tr => tr.Name.ToLower() == teamName.ToLower());
-=======
-                    var teamReportForCurrentTeam = teamReports.FirstOrDefault(tr => tr.Name == teamName);
->>>>>>> 76c83577eb86989eefb2c8e8bbce823bca0509ac
 
                     worksheet.Cells[currentRow, 2].Value = teamReportForCurrentTeam == null
                         ? "N/A"
