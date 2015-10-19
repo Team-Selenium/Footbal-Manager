@@ -1,11 +1,24 @@
 ﻿namespace Football.Client
 {
-    partial class FootballManagerClient
+    public partial class FootballManagerClient
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+
+        private System.Windows.Forms.Button createSqlServerDb;
+        private System.Windows.Forms.Button getMongoData;
+        private System.Windows.Forms.Button fillDatFromZip;
+        private System.Windows.Forms.Button fillFromXmlBtn;
+
+        private System.Windows.Forms.Button createMySqlDb;
+
+        private System.Windows.Forms.Button generatePdfReportBtn;
+        private System.Windows.Forms.Button generateXmlReportBtn;
+        private System.Windows.Forms.Button generateJsonReportBtn;
+        private System.Windows.Forms.Button excelReportForTeams;
+        private System.Windows.Forms.LinkLabel linkLabel1;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -29,134 +42,134 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.CreateSqlServerDb = new System.Windows.Forms.Button();
-            this.GetMongoData = new System.Windows.Forms.Button();
-            this.FillDatFromZip = new System.Windows.Forms.Button();
-            this.FillFromXml_btn = new System.Windows.Forms.Button();
-            this.CreateMySqlDb = new System.Windows.Forms.Button();
-            this.GeneratePdfReport_btn = new System.Windows.Forms.Button();
-            this.GenerateXmlReport_btn = new System.Windows.Forms.Button();
-            this.GenerateJsonReport_btn = new System.Windows.Forms.Button();
-            this.ExcelReportForTeams = new System.Windows.Forms.Button();
+            this.createSqlServerDb = new System.Windows.Forms.Button();
+            this.getMongoData = new System.Windows.Forms.Button();
+            this.fillDatFromZip = new System.Windows.Forms.Button();
+            this.fillFromXmlBtn = new System.Windows.Forms.Button();
+            this.createMySqlDb = new System.Windows.Forms.Button();
+            this.generatePdfReportBtn = new System.Windows.Forms.Button();
+            this.generateXmlReportBtn = new System.Windows.Forms.Button();
+            this.generateJsonReportBtn = new System.Windows.Forms.Button();
+            this.excelReportForTeams = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // CreateSqlServerDb
             // 
-            this.CreateSqlServerDb.BackColor = System.Drawing.Color.Azure;
-            this.CreateSqlServerDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateSqlServerDb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateSqlServerDb.Location = new System.Drawing.Point(74, 76);
-            this.CreateSqlServerDb.Name = "CreateSqlServerDb";
-            this.CreateSqlServerDb.Size = new System.Drawing.Size(163, 29);
-            this.CreateSqlServerDb.TabIndex = 0;
-            this.CreateSqlServerDb.Text = "Create SQL Server DB";
-            this.CreateSqlServerDb.UseVisualStyleBackColor = false;
-            this.CreateSqlServerDb.Click += new System.EventHandler(this.CreateSqlServerDb_Click);
+            this.createSqlServerDb.BackColor = System.Drawing.Color.Azure;
+            this.createSqlServerDb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.createSqlServerDb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createSqlServerDb.Location = new System.Drawing.Point(74, 76);
+            this.createSqlServerDb.Name = "CreateSqlServerDb";
+            this.createSqlServerDb.Size = new System.Drawing.Size(163, 29);
+            this.createSqlServerDb.TabIndex = 0;
+            this.createSqlServerDb.Text = "Create SQL Server DB";
+            this.createSqlServerDb.UseVisualStyleBackColor = false;
+            this.createSqlServerDb.Click += new System.EventHandler(this.CreateSqlServerDb_Click);
             // 
             // GetMongoData
             // 
-            this.GetMongoData.BackColor = System.Drawing.Color.Azure;
-            this.GetMongoData.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GetMongoData.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GetMongoData.Location = new System.Drawing.Point(74, 120);
-            this.GetMongoData.Name = "GetMongoData";
-            this.GetMongoData.Size = new System.Drawing.Size(163, 29);
-            this.GetMongoData.TabIndex = 1;
-            this.GetMongoData.Text = "Fill Data From MongoDB";
-            this.GetMongoData.UseVisualStyleBackColor = false;
-            this.GetMongoData.Click += new System.EventHandler(this.GetMongoData_Click);
+            this.getMongoData.BackColor = System.Drawing.Color.Azure;
+            this.getMongoData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.getMongoData.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.getMongoData.Location = new System.Drawing.Point(74, 120);
+            this.getMongoData.Name = "GetMongoData";
+            this.getMongoData.Size = new System.Drawing.Size(163, 29);
+            this.getMongoData.TabIndex = 1;
+            this.getMongoData.Text = "Fill Data From MongoDB";
+            this.getMongoData.UseVisualStyleBackColor = false;
+            this.getMongoData.Click += new System.EventHandler(this.GetMongoData_Click);
             // 
             // FillDatFromZip
             // 
-            this.FillDatFromZip.BackColor = System.Drawing.Color.Azure;
-            this.FillDatFromZip.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FillDatFromZip.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FillDatFromZip.Location = new System.Drawing.Point(74, 164);
-            this.FillDatFromZip.Name = "FillDatFromZip";
-            this.FillDatFromZip.Size = new System.Drawing.Size(163, 29);
-            this.FillDatFromZip.TabIndex = 2;
-            this.FillDatFromZip.Text = "Fill Data from Zip";
-            this.FillDatFromZip.UseVisualStyleBackColor = false;
-            this.FillDatFromZip.Click += new System.EventHandler(this.FillDatFromZip_Click);
+            this.fillDatFromZip.BackColor = System.Drawing.Color.Azure;
+            this.fillDatFromZip.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fillDatFromZip.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fillDatFromZip.Location = new System.Drawing.Point(74, 164);
+            this.fillDatFromZip.Name = "FillDatFromZip";
+            this.fillDatFromZip.Size = new System.Drawing.Size(163, 29);
+            this.fillDatFromZip.TabIndex = 2;
+            this.fillDatFromZip.Text = "Fill Data from Zip";
+            this.fillDatFromZip.UseVisualStyleBackColor = false;
+            this.fillDatFromZip.Click += new System.EventHandler(this.FillDatFromZip_Click);
             // 
             // FillFromXml_btn
             // 
-            this.FillFromXml_btn.BackColor = System.Drawing.Color.Azure;
-            this.FillFromXml_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.FillFromXml_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FillFromXml_btn.Location = new System.Drawing.Point(74, 208);
-            this.FillFromXml_btn.Name = "FillFromXml_btn";
-            this.FillFromXml_btn.Size = new System.Drawing.Size(163, 29);
-            this.FillFromXml_btn.TabIndex = 3;
-            this.FillFromXml_btn.Text = "Fill Data from Xml ";
-            this.FillFromXml_btn.UseVisualStyleBackColor = false;
-            this.FillFromXml_btn.Click += new System.EventHandler(this.FillFromXml_btn_Click);
+            this.fillFromXmlBtn.BackColor = System.Drawing.Color.Azure;
+            this.fillFromXmlBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fillFromXmlBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.fillFromXmlBtn.Location = new System.Drawing.Point(74, 208);
+            this.fillFromXmlBtn.Name = "FillFromXml_btn";
+            this.fillFromXmlBtn.Size = new System.Drawing.Size(163, 29);
+            this.fillFromXmlBtn.TabIndex = 3;
+            this.fillFromXmlBtn.Text = "Fill Data from Xml ";
+            this.fillFromXmlBtn.UseVisualStyleBackColor = false;
+            this.fillFromXmlBtn.Click += new System.EventHandler(this.FillFromXml_btn_Click);
             // 
             // CreateMySqlDb
             // 
-            this.CreateMySqlDb.BackColor = System.Drawing.Color.Azure;
-            this.CreateMySqlDb.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CreateMySqlDb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CreateMySqlDb.Location = new System.Drawing.Point(74, 383);
-            this.CreateMySqlDb.Name = "CreateMySqlDb";
-            this.CreateMySqlDb.Size = new System.Drawing.Size(163, 29);
-            this.CreateMySqlDb.TabIndex = 7;
-            this.CreateMySqlDb.Text = "Create MySql Db";
-            this.CreateMySqlDb.UseVisualStyleBackColor = false;
-            this.CreateMySqlDb.Click += new System.EventHandler(this.CreateMySqlDb_Click);
+            this.createMySqlDb.BackColor = System.Drawing.Color.Azure;
+            this.createMySqlDb.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.createMySqlDb.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.createMySqlDb.Location = new System.Drawing.Point(74, 383);
+            this.createMySqlDb.Name = "CreateMySqlDb";
+            this.createMySqlDb.Size = new System.Drawing.Size(163, 29);
+            this.createMySqlDb.TabIndex = 7;
+            this.createMySqlDb.Text = "Create MySql Db";
+            this.createMySqlDb.UseVisualStyleBackColor = false;
+            this.createMySqlDb.Click += new System.EventHandler(this.CreateMySqlDb_Click);
             // 
             // GeneratePdfReport_btn
             // 
-            this.GeneratePdfReport_btn.BackColor = System.Drawing.Color.Azure;
-            this.GeneratePdfReport_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GeneratePdfReport_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GeneratePdfReport_btn.Location = new System.Drawing.Point(74, 252);
-            this.GeneratePdfReport_btn.Name = "GeneratePdfReport_btn";
-            this.GeneratePdfReport_btn.Size = new System.Drawing.Size(163, 29);
-            this.GeneratePdfReport_btn.TabIndex = 4;
-            this.GeneratePdfReport_btn.Text = "Generate Pdf report";
-            this.GeneratePdfReport_btn.UseVisualStyleBackColor = false;
-            this.GeneratePdfReport_btn.Click += new System.EventHandler(this.GeneratePdfReport_btn_Click);
+            this.generatePdfReportBtn.BackColor = System.Drawing.Color.Azure;
+            this.generatePdfReportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.generatePdfReportBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.generatePdfReportBtn.Location = new System.Drawing.Point(74, 252);
+            this.generatePdfReportBtn.Name = "GeneratePdfReport_btn";
+            this.generatePdfReportBtn.Size = new System.Drawing.Size(163, 29);
+            this.generatePdfReportBtn.TabIndex = 4;
+            this.generatePdfReportBtn.Text = "Generate Pdf report";
+            this.generatePdfReportBtn.UseVisualStyleBackColor = false;
+            this.generatePdfReportBtn.Click += new System.EventHandler(this.GeneratePdfReport_btn_Click);
             // 
             // GenerateXmlReport_btn
             // 
-            this.GenerateXmlReport_btn.BackColor = System.Drawing.Color.Azure;
-            this.GenerateXmlReport_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GenerateXmlReport_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GenerateXmlReport_btn.Location = new System.Drawing.Point(74, 340);
-            this.GenerateXmlReport_btn.Name = "GenerateXmlReport_btn";
-            this.GenerateXmlReport_btn.Size = new System.Drawing.Size(163, 29);
-            this.GenerateXmlReport_btn.TabIndex = 6;
-            this.GenerateXmlReport_btn.Text = "Generate Xml report";
-            this.GenerateXmlReport_btn.UseVisualStyleBackColor = false;
-            this.GenerateXmlReport_btn.Click += new System.EventHandler(this.GenerateXmlReport_btn_Click);
+            this.generateXmlReportBtn.BackColor = System.Drawing.Color.Azure;
+            this.generateXmlReportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.generateXmlReportBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.generateXmlReportBtn.Location = new System.Drawing.Point(74, 340);
+            this.generateXmlReportBtn.Name = "GenerateXmlReport_btn";
+            this.generateXmlReportBtn.Size = new System.Drawing.Size(163, 29);
+            this.generateXmlReportBtn.TabIndex = 6;
+            this.generateXmlReportBtn.Text = "Generate Xml report";
+            this.generateXmlReportBtn.UseVisualStyleBackColor = false;
+            this.generateXmlReportBtn.Click += new System.EventHandler(this.GenerateXmlReport_btn_Click);
             // 
             // GenerateJsonReport_btn
             // 
-            this.GenerateJsonReport_btn.BackColor = System.Drawing.Color.Azure;
-            this.GenerateJsonReport_btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GenerateJsonReport_btn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.GenerateJsonReport_btn.Location = new System.Drawing.Point(74, 296);
-            this.GenerateJsonReport_btn.Name = "GenerateJsonReport_btn";
-            this.GenerateJsonReport_btn.Size = new System.Drawing.Size(163, 29);
-            this.GenerateJsonReport_btn.TabIndex = 5;
-            this.GenerateJsonReport_btn.Text = "Generate Json report";
-            this.GenerateJsonReport_btn.UseVisualStyleBackColor = false;
-            this.GenerateJsonReport_btn.Click += new System.EventHandler(this.GenerateJsonReport_btn_Click);
+            this.generateJsonReportBtn.BackColor = System.Drawing.Color.Azure;
+            this.generateJsonReportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.generateJsonReportBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.generateJsonReportBtn.Location = new System.Drawing.Point(74, 296);
+            this.generateJsonReportBtn.Name = "GenerateJsonReport_btn";
+            this.generateJsonReportBtn.Size = new System.Drawing.Size(163, 29);
+            this.generateJsonReportBtn.TabIndex = 5;
+            this.generateJsonReportBtn.Text = "Generate Json report";
+            this.generateJsonReportBtn.UseVisualStyleBackColor = false;
+            this.generateJsonReportBtn.Click += new System.EventHandler(this.GenerateJsonReport_btn_Click);
             // 
             // ExcelReportForTeams
             // 
-            this.ExcelReportForTeams.BackColor = System.Drawing.Color.Azure;
-            this.ExcelReportForTeams.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ExcelReportForTeams.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ExcelReportForTeams.Location = new System.Drawing.Point(74, 427);
-            this.ExcelReportForTeams.Name = "ExcelReportForTeams";
-            this.ExcelReportForTeams.Size = new System.Drawing.Size(163, 29);
-            this.ExcelReportForTeams.TabIndex = 8;
-            this.ExcelReportForTeams.Text = "Excel Report for Teams";
-            this.ExcelReportForTeams.UseVisualStyleBackColor = false;
-            this.ExcelReportForTeams.Click += new System.EventHandler(this.ExcelReportForTeams_Click);
+            this.excelReportForTeams.BackColor = System.Drawing.Color.Azure;
+            this.excelReportForTeams.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.excelReportForTeams.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.excelReportForTeams.Location = new System.Drawing.Point(74, 427);
+            this.excelReportForTeams.Name = "ExcelReportForTeams";
+            this.excelReportForTeams.Size = new System.Drawing.Size(163, 29);
+            this.excelReportForTeams.TabIndex = 8;
+            this.excelReportForTeams.Text = "Excel Report for Teams";
+            this.excelReportForTeams.UseVisualStyleBackColor = false;
+            this.excelReportForTeams.Click += new System.EventHandler(this.ExcelReportForTeams_Click);
             // 
             // linkLabel1
             // 
@@ -171,7 +184,7 @@
             this.linkLabel1.TabIndex = 9;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Football Manager -Team \"Selenium\"";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1_LinkClicked);
             // 
             // FootballManagerClient
             // 
@@ -180,15 +193,15 @@
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(318, 509);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.ExcelReportForTeams);
-            this.Controls.Add(this.CreateMySqlDb);
-            this.Controls.Add(this.GenerateJsonReport_btn);
-            this.Controls.Add(this.GenerateXmlReport_btn);
-            this.Controls.Add(this.GeneratePdfReport_btn);
-            this.Controls.Add(this.FillFromXml_btn);
-            this.Controls.Add(this.FillDatFromZip);
-            this.Controls.Add(this.GetMongoData);
-            this.Controls.Add(this.CreateSqlServerDb);
+            this.Controls.Add(this.excelReportForTeams);
+            this.Controls.Add(this.createMySqlDb);
+            this.Controls.Add(this.generateJsonReportBtn);
+            this.Controls.Add(this.generateXmlReportBtn);
+            this.Controls.Add(this.generatePdfReportBtn);
+            this.Controls.Add(this.fillFromXmlBtn);
+            this.Controls.Add(this.fillDatFromZip);
+            this.Controls.Add(this.getMongoData);
+            this.Controls.Add(this.createSqlServerDb);
             this.Name = "FootballManagerClient";
             this.Text = "Football Manager";
             this.ResumeLayout(false);
@@ -197,19 +210,5 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button CreateSqlServerDb;
-        private System.Windows.Forms.Button GetMongoData;
-        private System.Windows.Forms.Button FillDatFromZip;
-        private System.Windows.Forms.Button FillFromXml_btn;
-
-        private System.Windows.Forms.Button CreateMySqlDb;
-
-        private System.Windows.Forms.Button GeneratePdfReport_btn;
-        private System.Windows.Forms.Button GenerateXmlReport_btn;
-        private System.Windows.Forms.Button GenerateJsonReport_btn;
-        private System.Windows.Forms.Button ExcelReportForTeams;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-
     }
 }

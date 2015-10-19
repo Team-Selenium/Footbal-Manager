@@ -22,8 +22,6 @@
                 NumberOfMatches = tr.NumbersOfMatches
             }).ToTable("TeamReports");
 
-
-
             teamReportMapping.HasProperty(c => c.Id).IsIdentity(KeyGenerator.Autoinc);
 
             configurations.Add(teamReportMapping);

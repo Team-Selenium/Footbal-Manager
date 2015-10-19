@@ -18,10 +18,7 @@
                 await ctx.SaveChangesAsync();
             }
         }
-
-
-
-        
+       
         public ICollection<DtoTeamReport> GetTeamReport()
         {
             var ctx = new FootballContext();
@@ -56,7 +53,6 @@
                 ctx.SaveChanges();
             }
         }
-
 
         public void FillPlayersFromZip(Dictionary<string, List<Player>> teams)
         {

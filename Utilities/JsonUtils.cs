@@ -20,6 +20,7 @@
             {
                 SaveReport(report, report.Name);
             }
+
             Process.Start(SaveFilePath);
         }
 
@@ -28,6 +29,5 @@
             var jsonReport = JsonConvert.SerializeObject(report, Formatting.Indented);
             File.WriteAllText(SaveFilePath + teamName + ".json", jsonReport.ToString());
         }
-
     }
 }

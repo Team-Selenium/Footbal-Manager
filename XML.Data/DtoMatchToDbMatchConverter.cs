@@ -3,23 +3,21 @@
     using System.Collections.Generic;
     using System.Linq;
 
+    using Contracts;
     using Football.Models;
     using MsSql.Data;
-    using Contracts;
-    using System;
-    using Models;
 
     public class DtoMatchToDbMatchConverter
     {
-        public DtoMatchToDbMatchConverter(IXmlToDtoMatchConverter DtoModels, FootballContext db)
+        public DtoMatchToDbMatchConverter(IXmlToDtoMatchConverter dtoModels, FootballContext db)
         {
-            this.DtoModels = DtoModels;
+            this.DtoModels = dtoModels;
             this.Db = db;
         }
 
-        IXmlToDtoMatchConverter DtoModels { get; set; }
+        internal IXmlToDtoMatchConverter DtoModels { get; set; }
 
-        FootballContext Db { get; set; }
+        internal FootballContext Db { get; set; }
 
         public ICollection<Match> GetAllMatches()
         {
@@ -32,7 +30,6 @@
             {
                 var areValidTeamIds = validTeamIds.Contains(dtoMatch.HomeTeamId) && validTeamIds.Contains(dtoMatch.AwayTeamId);
                 var isValidStadiumId = validStadiumIds.Contains(dtoMatch.StadiumId);
-
 
                 if (areValidTeamIds && isValidStadiumId)
                 {

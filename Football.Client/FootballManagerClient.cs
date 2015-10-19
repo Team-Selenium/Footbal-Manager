@@ -70,7 +70,6 @@
                         }
                     }
 
-
                     ctx.SaveChanges();
                 }
 
@@ -172,8 +171,6 @@
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Information);
             }
-
-
         }
 
         private void GenerateXmlReport_btn_Click(object sender, EventArgs e)
@@ -228,7 +225,6 @@
 
             var directoryOpen = new FolderBrowserDialog();
 
-
             if (directoryOpen.ShowDialog() == DialogResult.OK)
             {
                 var filePath = directoryOpen.SelectedPath;
@@ -243,7 +239,7 @@
             ExcelUtils.GenerateExcelReportForTeams(repoSqlite.GetProductTaxData(), repoMySql.GetTeamReports());
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void LinkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/Team-Selenium/Football-Manager");
         }

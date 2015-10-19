@@ -13,6 +13,5 @@
         public int NumberOfPlayers { get; set; }
 
         public int NumbersOfMatches { get; set; }
-
     }
 }
