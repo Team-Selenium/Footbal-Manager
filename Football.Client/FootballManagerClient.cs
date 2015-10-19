@@ -9,8 +9,9 @@
     using MongoDb.Data;
     using MsSql.Data;
     using MySql.Data;
-    using XML.Data;
+    using Sqlite.Data;
     using Utilities;
+    using XML.Data;
 
     public partial class FootballManagerClient : Form
     {
@@ -231,6 +232,14 @@
 
 
 
+        }
+
+        private void ExcelReportForTeams_Click(object sender, EventArgs e)
+        {
+
+            var repoMySql = new MySqlRepository();
+            var repoSqlite = new SqliteRepository();
+            ExcelUtils.GenerateExcelReportForTeams(repoSqlite.GetProductTaxData(), repoMySql.GetTeamReports());
         }
 
 

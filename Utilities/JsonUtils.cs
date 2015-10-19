@@ -1,12 +1,14 @@
 ﻿namespace Utilities
 {
+    using System.Diagnostics;
+    using System.IO;
     using FootballManager.DtoModels;
     using MsSql.Data;
     using Newtonsoft.Json;
-    using System.IO;
 
     public static class JsonUtils
     {
+        private const string SaveFilePath = @"..\..\..\Data Sources\JSON\";
         public static void JsonCreateReports()
         {
             var repo = new MSSqlRepository();
@@ -15,14 +17,15 @@
 
             foreach (var report in teamReports)
             {
-                SaveReport(report, report.Id);
+                SaveReport(report, report.Name);
             }
+            Process.Start(SaveFilePath);
         }
 
-        private static void SaveReport(DtoTeamReport report, int id)
+        private static void SaveReport(DtoTeamReport report, string teamName)
         {
             var jsonReport = JsonConvert.SerializeObject(report, Formatting.Indented);
-            File.WriteAllText("../../../Data Sources/JSON/" + id + ".json", jsonReport.ToString());
+            File.WriteAllText(SaveFilePath + teamName + ".json", jsonReport.ToString());
         }
 
     }

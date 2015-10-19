@@ -33,13 +33,11 @@
             this.GetMongoData = new System.Windows.Forms.Button();
             this.FillDatFromZip = new System.Windows.Forms.Button();
             this.FillFromXml_btn = new System.Windows.Forms.Button();
-
             this.CreateMySqlDb = new System.Windows.Forms.Button();
-
             this.GeneratePdfReport_btn = new System.Windows.Forms.Button();
             this.GenerateXmlReport_btn = new System.Windows.Forms.Button();
             this.GenerateJsonReport_btn = new System.Windows.Forms.Button();
-
+            this.ExcelReportForTeams = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // CreateSqlServerDb
@@ -82,7 +80,6 @@
             this.FillFromXml_btn.UseVisualStyleBackColor = true;
             this.FillFromXml_btn.Click += new System.EventHandler(this.FillFromXml_btn_Click);
             // 
-
             // CreateMySqlDb
             // 
             this.CreateMySqlDb.Location = new System.Drawing.Point(79, 242);
@@ -92,7 +89,7 @@
             this.CreateMySqlDb.Text = "Create MySql Db";
             this.CreateMySqlDb.UseVisualStyleBackColor = true;
             this.CreateMySqlDb.Click += new System.EventHandler(this.CreateMySqlDb_Click);
-
+            // 
             // GeneratePdfReport_btn
             // 
             this.GeneratePdfReport_btn.Location = new System.Drawing.Point(228, 91);
@@ -122,21 +119,27 @@
             this.GenerateJsonReport_btn.Text = "Generate Json report";
             this.GenerateJsonReport_btn.UseVisualStyleBackColor = true;
             this.GenerateJsonReport_btn.Click += new System.EventHandler(this.GenerateJsonReport_btn_Click);
-
+            // 
+            // ExcelReportForTeams
+            // 
+            this.ExcelReportForTeams.Location = new System.Drawing.Point(241, 227);
+            this.ExcelReportForTeams.Name = "ExcelReportForTeams";
+            this.ExcelReportForTeams.Size = new System.Drawing.Size(132, 23);
+            this.ExcelReportForTeams.TabIndex = 7;
+            this.ExcelReportForTeams.Text = "Excel Report for Teams";
+            this.ExcelReportForTeams.UseVisualStyleBackColor = true;
+            this.ExcelReportForTeams.Click += new System.EventHandler(this.ExcelReportForTeams_Click);
             // 
             // FootballManagerClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(281, 312);
-            this.Controls.Add(this.CreateMySqlDb);
-
             this.ClientSize = new System.Drawing.Size(435, 262);
+            this.Controls.Add(this.ExcelReportForTeams);
+            this.Controls.Add(this.CreateMySqlDb);
             this.Controls.Add(this.GenerateJsonReport_btn);
             this.Controls.Add(this.GenerateXmlReport_btn);
             this.Controls.Add(this.GeneratePdfReport_btn);
-
             this.Controls.Add(this.FillFromXml_btn);
             this.Controls.Add(this.FillDatFromZip);
             this.Controls.Add(this.GetMongoData);
@@ -159,6 +162,7 @@
         private System.Windows.Forms.Button GeneratePdfReport_btn;
         private System.Windows.Forms.Button GenerateXmlReport_btn;
         private System.Windows.Forms.Button GenerateJsonReport_btn;
+        private System.Windows.Forms.Button ExcelReportForTeams;
 
     }
 }

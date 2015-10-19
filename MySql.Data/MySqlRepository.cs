@@ -1,8 +1,10 @@
 ﻿
 namespace MySql.Data
 {
+    using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using FootballManager.DtoModels;
     using Newtonsoft.Json;
     using Telerik.OpenAccess;
 
@@ -40,6 +42,21 @@ namespace MySql.Data
                     }
                 }
             }
+        }
+
+        public IList<DtoTeamReport> GetTeamReports()
+        {
+            var ctx = new FluentModel();
+
+            return ctx.TeamReports.Select(tr => new DtoTeamReport
+            {
+                Id = tr.Id,
+                Name = tr.Name,
+                Coach = tr.Coach,
+                Owner = tr.Owner,
+                NumberOfPlayers = tr.NumberOfPlayers,
+                NumbersOfMatches = tr.NumbersOfMatches
+            }).ToList();
         }
 
         public void UpdateDatabase()

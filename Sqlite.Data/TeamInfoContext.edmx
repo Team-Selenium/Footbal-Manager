@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TeamInfoModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=&quot;D:\Marto\Google Drive\Team Projects\Football-Manager\Sqlite.Data\SqliteDb\TeamInfo.db&quot;" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TeamInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TeamName" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="JerseyColor" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="ShortsColor" Type="nvarchar" MaxLength="2147483647" />
+          <Property Name="LeagueTitles" Type="int" Nullable="false" />
+          <Property Name="CupTitles" Type="int" Nullable="false" />
+          <Property Name="KitsPrice" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+          <Property Name="BootsPrice" Type="decimal" Precision="53" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TeamInfoModelStoreContainer">
+          <EntitySet Name="TeamInfo" EntityType="Self.TeamInfo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TeamInfoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TeamInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TeamName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="JerseyColor" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="ShortsColor" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+          <Property Name="LeagueTitles" Type="Int32" Nullable="false" />
+          <Property Name="CupTitles" Type="Int32" Nullable="false" />
+          <Property Name="KitsPrice" Type="Decimal" Precision="53" Scale="0" Nullable="false" />
+          <Property Name="BootsPrice" Type="Decimal" Precision="53" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TeamInfoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TeamInfoes" EntityType="Self.TeamInfo" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TeamInfoModelStoreContainer" CdmEntityContainer="TeamInfoEntities">
+          <EntitySetMapping Name="TeamInfoes">
+            <EntityTypeMapping TypeName="TeamInfoModel.TeamInfo">
+              <MappingFragment StoreEntitySet="TeamInfo">
+                <ScalarProperty Name="BootsPrice" ColumnName="BootsPrice" />
+                <ScalarProperty Name="KitsPrice" ColumnName="KitsPrice" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TeamName" ColumnName="TeamName" />
+                <ScalarProperty Name="JerseyColor" ColumnName="JerseyColor" />
+                <ScalarProperty Name="ShortsColor" ColumnName="ShortsColor" />
+                <ScalarProperty Name="LeagueTitles" ColumnName="LeagueTitles" />
+                <ScalarProperty Name="CupTitles" ColumnName="CupTitles" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
