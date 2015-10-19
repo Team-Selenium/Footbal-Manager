@@ -30,7 +30,7 @@
 
             foreach (var dtoMatch in dtoMatches)
             {
-                var areValidTeamIds = validStadiumIds.Contains(dtoMatch.HomeTeamId) && validStadiumIds.Contains(dtoMatch.AwayTeamId);
+                var areValidTeamIds = validTeamIds.Contains(dtoMatch.HomeTeamId) && validTeamIds.Contains(dtoMatch.AwayTeamId);
                 var isValidStadiumId = validStadiumIds.Contains(dtoMatch.StadiumId);
 
 

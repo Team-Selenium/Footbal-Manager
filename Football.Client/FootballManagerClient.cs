@@ -136,7 +136,7 @@
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show(
                     "Something bad happened",
