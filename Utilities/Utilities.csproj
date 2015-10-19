@@ -77,10 +77,6 @@
       <Project>{460584ce-3dff-46ac-8746-f4266d0178a2}</Project>
       <Name>MsSql.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PdfGenerator\Pdf.Data.csproj">
-      <Project>{2abe0dff-64e8-41db-8151-99d0feb32972}</Project>
-      <Name>Pdf.Data</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

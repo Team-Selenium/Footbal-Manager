@@ -7,7 +7,6 @@
     using System.Threading.Tasks;
     using Football.Models;
     using FootballManager.DtoModels;
-    using Pdf.Data.Models;
 
     public class MSSqlRepository
     {
