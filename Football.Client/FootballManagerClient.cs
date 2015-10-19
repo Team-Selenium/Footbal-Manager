@@ -8,9 +8,13 @@
     using System.Windows.Forms;
     using MongoDb.Data;
     using MsSql.Data;
+    using MySql.Data;
+    using XML.Data;
 
     public partial class FootballManagerClient : Form
     {
+        private const string XmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
+
         public FootballManagerClient()
         {
             this.InitializeComponent();
@@ -41,7 +45,7 @@
                 var repo = new MongoDbRepository();
 
                 var teams = (await repo.GetTeamsData()).ToList();
-                var stadiums= (await repo.GetStadiumsData()).ToList();
+                var stadiums = (await repo.GetStadiumsData()).ToList();
 
                 var ctx = new FootballContext();
                 using (ctx)
@@ -114,5 +118,54 @@
                     MessageBoxIcon.Error);
             }
         }
+
+        private void FillFromXml_btn_Click(object sender, EventArgs e)
+        {
+            var repo = new MSSqlRepository();
+            var ctx = new FootballContext();
+            var xmlToDtoConverter = new XmlToDtoMatchConverter(XmlMatchesPath);
+            var dtoToMatchModelConverter = new DtoMatchToDbMatchConverter(xmlToDtoConverter, ctx);
+            var matches = dtoToMatchModelConverter.GetAllMatches();
+
+            try
+            {
+                repo.FillMatchesFromXml(matches);
+
+                MessageBox.Show(
+                    "The matches are inserted",
+                    "Matches insert",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Something bad happened",
+                    "Fatal Error",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+        private void CreateMySqlDb_Click(object sender, EventArgs e)
+        {
+            var repo = new MySqlRepository();
+
+            repo.UpdateDatabase();
+
+            var directoryOpen = new FolderBrowserDialog();
+
+
+            if (directoryOpen.ShowDialog() == DialogResult.OK)
+            {
+                var filePath = directoryOpen.SelectedPath;
+                repo.ImportDbDataFromJson(filePath);
+            }
+
+
+
+        }
+
+
     }
 }

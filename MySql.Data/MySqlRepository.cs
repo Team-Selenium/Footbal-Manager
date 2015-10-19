@@ -1,33 +1,21 @@
-﻿namespace TestApp
+﻿
+namespace MySql.Data
 {
     using System.IO;
     using System.Linq;
-    using MySql.Data;
     using Newtonsoft.Json;
     using Telerik.OpenAccess;
 
-    internal class Program
+    public class MySqlRepository
     {
-        private const string ZipPlayersPath = "../../../Data Sources/ZIP/Players.zip";
-        private const string XmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
-        private const string XmlPlayersPath = "../../../Data Sources/XML/Players.xml";
-        private const string PdfReportPath = "../../../Data Sources/PDF/Report.pdf";
-
-        private static void Main(string[] args)
-        {
-            UpdateDatabase();
-
-            ImportDbDataFromJson();
-        }
-
-        private static void ImportDbDataFromJson()
+        public void ImportDbDataFromJson(string path)
         {
             var ctx = new FluentModel();
 
 
             using (ctx)
             {
-                var files = Directory.GetFiles("../../../Data Sources/JSON");
+                var files = Directory.GetFiles(path);
 
                 var teams = ctx.GetAll<TeamReportDto>().ToList();
 
@@ -54,7 +42,7 @@
             }
         }
 
-        private static void UpdateDatabase()
+        public void UpdateDatabase()
         {
             using (var context = new FluentModel())
             {
@@ -63,7 +51,7 @@
             }
         }
 
-        private static void EnsureDB(ISchemaHandler schemaHandler)
+        private void EnsureDB(ISchemaHandler schemaHandler)
         {
             string script = null;
             if (schemaHandler.DatabaseExists())
@@ -81,43 +69,5 @@
                 schemaHandler.ExecuteDDLScript(script);
             }
         }
-
-        //var repo = new MSSqlRepository();
-
-
-
-        //var repo = new JsonUtils();
-        //repo.JsonCreateReports();
-
-        // var zip = System.IO.Compression.ZipFile.Open(ZipPlayersPath, ZipArchiveMode.Read);
-
-        // using (zip)
-        // {
-        //    var teams = ExcelUtils.GetAllPlayers(zip);
-        //   // var repo = new MSSqlRepository();
-
-        //    //repo.FillPlayersFromZip(teams);
-        //}
-
-        //var xmlOperator = new XmlToDtoMatchConverter(XmlMatchesPath);
-        //var matches = xmlOperator.GetAllDtoMatches();
-        ////var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
-
-        //foreach (var match in matches)
-        //{
-        //    Console.WriteLine("Match Id: " + match.Id);
-        //    Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
-        //    Console.WriteLine("Attendance: " + match.Attendance);
-        //}
-
-        //foreach (var player in players)
-        //{
-        //    Console.WriteLine("Player Id: " + player.Id);
-        //    Console.WriteLine("HomeTeam Id: " + player.Position);
-        //}
-
-
-        //PdfUtils.GeneratePdfReport();
-
     }
 }

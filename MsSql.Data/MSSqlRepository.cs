@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
     using Football.Models;
     using FootballManager.DtoModels;
+    using Pdf.Data.Models;
 
     public class MSSqlRepository
     {
@@ -42,7 +43,20 @@
             }
         }
 
+        public void FillMatchesFromXml(ICollection<Match> matches)
+        {
+            var ctx = new FootballContext();
 
+            using (ctx)
+            {
+                foreach (var match in matches)
+                {
+                    ctx.Matches.Add(match);
+                }
+
+                ctx.SaveChanges();
+            }
+        }
 
 
         public void FillPlayersFromZip(Dictionary<string, List<Player>> teams)
@@ -81,6 +95,27 @@
                 }
 
                 ctx.SaveChanges();
+            }
+        }
+
+        public Dictionary<string, List<DtoPdfExportTable>> GetDataForPdfExport()
+        {
+            using (var ctx = new FootballContext())
+            {
+                Dictionary<string, List<DtoPdfExportTable>> dataForPdfExport = ctx.Matches
+                     .Select(m => new DtoPdfExportTable
+                     {
+                         Date = m.Date,
+                         Town = m.Stadium.Town.Name,
+                         Stadium = m.Stadium.Name,
+                         HomeTeam = m.HomeTeam.Name,
+                         AwayTeam = m.AwayTeam.Name,
+                         Result = m.HomeScore + " : " + m.AwayScore
+                     })
+                     .GroupBy(g => g.Town)
+                     .ToDictionary(k => k.Key, v => v.ToList());
+
+                return dataForPdfExport;
             }
         }
     }
