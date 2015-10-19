@@ -2,6 +2,7 @@
 {
     using System;
     using System.Data;
+    using System.Diagnostics;
     using System.IO;
     using System.IO.Compression;
     using System.Linq;
@@ -36,6 +37,7 @@
             }
             catch (Exception ex)
             {
+                // Find appropriate exception
                 var exmes = ex.Message;
             }
         }
@@ -139,8 +141,9 @@
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                // Find appropriate exception
                 MessageBox.Show(
                     "Something bad happened",
                     "Fatal Error",
@@ -154,9 +157,15 @@
             try
             {
                 PdfUtils.GeneratePdfReport();
+                MessageBox.Show(
+                    "The Pdf report is ready",
+                    "Pdf report",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception)
             {
+                // Find appropriate exception
                 MessageBox.Show(
                     "Something bad happened",
                     "Fatal Error",
@@ -164,11 +173,7 @@
                     MessageBoxIcon.Information);
             }
 
-            MessageBox.Show(
-                    "The Pdf report is ready",
-                    "Pdf report",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+
         }
 
         private void GenerateXmlReport_btn_Click(object sender, EventArgs e)
@@ -176,21 +181,21 @@
             try
             {
                 // Write logic here
+                MessageBox.Show(
+                   "The XML report is still not implemented. When ready, change this message",
+                   "XML report",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
             }
             catch (Exception)
             {
+                // Find appropriate exception
                 MessageBox.Show(
                     "Something bad happened",
                     "Fatal Error",
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Information);
             }
-
-            MessageBox.Show(
-                    "The XML report is still not implemented. When ready, change this message",
-                    "XML report",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
         }
 
         private void GenerateJsonReport_btn_Click(object sender, EventArgs e)
@@ -198,21 +203,21 @@
             try
             {
                 JsonUtils.JsonCreateReports();
+                MessageBox.Show(
+                    "The JSON report is generated",
+                    "JSON report",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
             }
             catch (Exception)
             {
+                // Find appropriate exception
                 MessageBox.Show(
                     "Something bad happened",
                     "Fatal Error",
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Information);
             }
-
-            MessageBox.Show(
-                    "The JSON report is generated",
-                    "JSON report",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
         }
 
         private void CreateMySqlDb_Click(object sender, EventArgs e)
@@ -229,19 +234,18 @@
                 var filePath = directoryOpen.SelectedPath;
                 repo.ImportDbDataFromJson(filePath);
             }
-
-
-
         }
 
         private void ExcelReportForTeams_Click(object sender, EventArgs e)
         {
-
             var repoMySql = new MySqlRepository();
             var repoSqlite = new SqliteRepository();
             ExcelUtils.GenerateExcelReportForTeams(repoSqlite.GetProductTaxData(), repoMySql.GetTeamReports());
         }
 
-
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Team-Selenium/Football-Manager");
+        }
     }
 }

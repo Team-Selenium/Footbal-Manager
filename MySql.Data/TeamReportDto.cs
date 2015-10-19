@@ -1,5 +1,4 @@
-﻿
-namespace MySql.Data
+﻿namespace MySql.Data
 {
     public class TeamReportDto
     {
@@ -14,6 +13,5 @@ namespace MySql.Data
         public int NumberOfPlayers { get; set; }
 
         public int NumbersOfMatches { get; set; }
-
     }
 }

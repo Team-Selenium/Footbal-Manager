@@ -1,5 +1,4 @@
-﻿
-namespace MySql.Data
+﻿namespace MySql.Data
 {
     using System.Collections.Generic;
     using System.IO;

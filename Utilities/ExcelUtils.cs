@@ -206,20 +206,17 @@
                         {
                             worksheet.Cells[i, j].Style.Fill.PatternType = ExcelFillStyle.Solid;
                             worksheet.Cells[i, j].Style.Fill.BackgroundColor.SetColor(Color.LightSkyBlue);
-
                         }
                         worksheet.Cells[i, j].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                     }
 
                 }
 
-
                 package.Save();
             }
 
             Process.Start(ExcelReportFilePath);
         }
-
 
         private static FileInfo CreateFile()
         {
@@ -238,6 +235,7 @@
 
             return newFile;
         }
+
         private static void CopyStream(Stream input, Stream output)
         {
             var buffer = new byte[2048];
