@@ -21,7 +21,7 @@
         [XmlAttribute("attendance")]
         public int Attendance { get; set; }
 
-        [XmlAttribute("highScore")]
+        [XmlAttribute("homeScore")]
         public int HomeScore { get; set; }
 
         [XmlAttribute("awayScore")]

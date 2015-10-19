@@ -1,6 +1,5 @@
 ﻿namespace FootballManager.DtoModels
 {
-
     public class TeamInfoDto
     {
         public int Id { get; set; }
@@ -18,7 +17,5 @@
         public decimal KitsPrice { get; set; }
 
         public decimal BootsPrice { get; set; }
-
-
     }
 }

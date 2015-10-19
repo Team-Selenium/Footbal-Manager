@@ -29,9 +29,8 @@ namespace MsSql.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Team>().HasMany(t => t.Matches).WithRequired(t => t.HomeTeam).HasForeignKey<int>(t=>t.HomeTeamId).WillCascadeOnDelete(false);
+            modelBuilder.Entity<Team>().HasMany(t => t.Matches).WithRequired(t => t.HomeTeam).HasForeignKey<int>(t => t.HomeTeamId).WillCascadeOnDelete(false);
             modelBuilder.Entity<Team>().HasMany(t => t.Matches).WithRequired(t => t.AwayTeam).HasForeignKey<int>(t => t.AwayTeamId).WillCascadeOnDelete(false);
-            
         }
     }
 }

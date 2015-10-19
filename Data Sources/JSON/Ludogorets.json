@@ -1,8 +1,8 @@
 {
-  "Id": 3,
+  "Id": 2,
   "Name": "Ludogorets",
   "Owner": "Petio Andreev",
   "Coach": "Petar Angelov",
-  "NumberOfPlayers": 13,
-  "NumbersOfMatches": 1
+  "NumberOfPlayers": 0,
+  "NumbersOfMatches": 8
 }
