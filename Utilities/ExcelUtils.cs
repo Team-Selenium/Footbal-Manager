@@ -50,7 +50,6 @@
                         { "Data Source", TempFile }
                     };
 
-
                     connection.ConnectionString = connectionString.ToString();
 
                     using (connection)
@@ -62,7 +61,6 @@
                         var sheetName = excelSchema.Rows[0]["TABLE_NAME"].ToString();
 
                         var oleDbCommand = new OleDbCommand("SELECT * FROM [" + sheetName + "]", connection);
-
 
                         using (var adapter = new OleDbDataAdapter(oleDbCommand))
                         {
@@ -102,12 +100,9 @@
             return teamPlayers;
         }
 
-
         public static void GenerateExcelReportForTeams(IList<TeamInfoDto> teamInfos, IList<DtoTeamReport> teamReports)
         {
             var newFile = CreateFile();
-
-
 
             using (ExcelPackage package = new ExcelPackage(newFile))
             {
@@ -126,17 +121,13 @@
                 worksheet.Cells[1, 11].Value = "Boots Price";
                 worksheet.Cells[1, 12].Value = "Total Costs";
 
-
                 var currentRow = 2;
                 for (int i = 0; i < teamInfos.Count; i++, currentRow++)
                 {
-
                     var teamName = teamInfos[i].TeamName;
                     worksheet.Cells[currentRow, 1].Value = teamName;
 
-
                     var teamReportForCurrentTeam = teamReports.FirstOrDefault(tr => tr.Name == teamName);
-
 
                     worksheet.Cells[currentRow, 2].Value = teamReportForCurrentTeam == null
                         ? "N/A"
@@ -157,8 +148,6 @@
                         playersCount = teamReportForCurrentTeam.NumberOfPlayers;
                     }
 
-
-
                     worksheet.Cells[currentRow, 8].Value = teamReportForCurrentTeam == null
                         ? "N/A"
                         : (NeededKits * playersCount).ToString();
@@ -167,21 +156,17 @@
                         ? "N/A"
                         : (NeededBootsPairs * playersCount).ToString();
 
-
                     worksheet.Cells[currentRow, 10].Value = teamReportForCurrentTeam == null
                         ? "N/A"
-                        : (teamInfos[i].KitsPrice).ToString();
-
+                        : teamInfos[i].KitsPrice.ToString();
 
                     worksheet.Cells[currentRow, 11].Value = teamReportForCurrentTeam == null
                         ? "N/A"
-                        : (teamInfos[i].BootsPrice).ToString();
+                        : teamInfos[i].BootsPrice.ToString();
 
                     worksheet.Cells[currentRow, 12].Value = teamReportForCurrentTeam == null
                         ? "N/A"
-                        : (teamInfos[i].BootsPrice * NeededBootsPairs * playersCount + teamInfos[i].KitsPrice * NeededKits * playersCount).ToString();
-
-
+                        : ((teamInfos[i].BootsPrice * NeededBootsPairs * playersCount) + (teamInfos[i].KitsPrice * NeededKits * playersCount)).ToString();
                 }
 
                 worksheet.Calculate();
@@ -207,9 +192,9 @@
                             worksheet.Cells[i, j].Style.Fill.PatternType = ExcelFillStyle.Solid;
                             worksheet.Cells[i, j].Style.Fill.BackgroundColor.SetColor(Color.LightSkyBlue);
                         }
+
                         worksheet.Cells[i, j].Style.Border.BorderAround(ExcelBorderStyle.Thin);
                     }
-
                 }
 
                 package.Save();

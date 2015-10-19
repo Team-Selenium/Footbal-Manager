@@ -13,7 +13,6 @@
         {
             var ctx = new FluentModel();
 
-
             using (ctx)
             {
                 var files = Directory.GetFiles(path);
@@ -63,7 +62,7 @@
             using (var context = new FluentModel())
             {
                 var schemaHandler = context.GetSchemaHandler();
-                EnsureDB(schemaHandler);
+                this.EnsureDB(schemaHandler);
             }
         }
 

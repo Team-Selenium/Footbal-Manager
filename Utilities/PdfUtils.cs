@@ -1,11 +1,11 @@
 ﻿namespace Utilities
 {
     using System;
-    using System.Linq;
-    using MsSql.Data;
+    using System.IO;
+
     using iTextSharp.text;
     using iTextSharp.text.pdf;
-    using System.IO;
+    using MsSql.Data;
 
     public static class PdfUtils
     {
@@ -29,7 +29,7 @@
             PdfPCell headerCell = new PdfPCell(new Phrase("Sample PDF Export From the Football Manager"));
             headerCell.Colspan = RowCountInPdfExport;
             headerCell.Padding = 10f;
-            headerCell.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
+            headerCell.HorizontalAlignment = 1;
             headerCell.BackgroundColor = headerBackground;
             table.AddCell(headerCell);
 

@@ -2,6 +2,7 @@
 {
     using System.IO;
     using System.Linq;
+
     using MySql.Data;
     using Newtonsoft.Json;
     using Telerik.OpenAccess;
@@ -23,7 +24,6 @@
         private static void ImportDbDataFromJson()
         {
             var ctx = new FluentModel();
-
 
             using (ctx)
             {
@@ -81,43 +81,5 @@
                 schemaHandler.ExecuteDDLScript(script);
             }
         }
-
-        //var repo = new MSSqlRepository();
-
-
-
-        //var repo = new JsonUtils();
-        //repo.JsonCreateReports();
-
-        // var zip = System.IO.Compression.ZipFile.Open(ZipPlayersPath, ZipArchiveMode.Read);
-
-        // using (zip)
-        // {
-        //    var teams = ExcelUtils.GetAllPlayers(zip);
-        //   // var repo = new MSSqlRepository();
-
-        //    //repo.FillPlayersFromZip(teams);
-        //}
-
-        //var xmlOperator = new XmlToDtoMatchConverter(XmlMatchesPath);
-        //var matches = xmlOperator.GetAllDtoMatches();
-        ////var players = xmlOperator.GetAllPlayers(XmlPlayersPath);
-
-        //foreach (var match in matches)
-        //{
-        //    Console.WriteLine("Match Id: " + match.Id);
-        //    Console.WriteLine("HomeTeam Id: " + match.HomeTeamId);
-        //    Console.WriteLine("Attendance: " + match.Attendance);
-        //}
-
-        //foreach (var player in players)
-        //{
-        //    Console.WriteLine("Player Id: " + player.Id);
-        //    Console.WriteLine("HomeTeam Id: " + player.Position);
-        //}
-
-
-        //PdfUtils.GeneratePdfReport();
-
     }
 }

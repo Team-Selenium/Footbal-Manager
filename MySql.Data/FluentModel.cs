@@ -1,8 +1,7 @@
-﻿using System.Linq;
-
-namespace MySql.Data
+﻿namespace MySql.Data
 {
-    using FootballManager.DtoModels;
+    using System.Linq;
+
     using Telerik.OpenAccess;
     using Telerik.OpenAccess.Metadata;
 
@@ -18,7 +17,8 @@ namespace MySql.Data
 
         public FluentModel()
             : base(connectionStringName, backend, metadataSource)
-        { }
+        {
+        }
 
         public IQueryable<TeamReportDto> TeamReports
         {
