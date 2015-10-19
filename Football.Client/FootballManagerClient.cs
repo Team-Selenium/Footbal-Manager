@@ -28,9 +28,9 @@
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Find appropriate exception
+                var exmes = ex.Message;
             }
         }
 
@@ -40,7 +40,8 @@
             {
                 var repo = new MongoDbRepository();
 
-                var teams = (await repo.GetData()).ToList();
+                var teams = (await repo.GetTeamsData()).ToList();
+                var stadiums= (await repo.GetStadiumsData()).ToList();
 
                 var ctx = new FootballContext();
                 using (ctx)
@@ -53,11 +54,20 @@
                         }
                     }
 
+                    foreach (var stadium in stadiums)
+                    {
+                        if (!ctx.Stadiums.Any(pl => pl.Id == stadium.Id))
+                        {
+                            ctx.Stadiums.Add(stadium);
+                        }
+                    }
+
+
                     ctx.SaveChanges();
                 }
 
                 MessageBox.Show(
-                    "The teams are inserted",
+                    "The teams, couches, stadiums and towns are inserted",
                     "Teams insert",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);

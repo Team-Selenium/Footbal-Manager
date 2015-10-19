@@ -38,6 +38,10 @@
       <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression" />
@@ -49,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExcelUtils.cs" />
+    <Compile Include="JsonUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -58,6 +63,14 @@
     <ProjectReference Include="..\Football.Models\Football.Models.csproj">
       <Project>{75bda7e9-a206-4887-a0e1-1e203593460d}</Project>
       <Name>Football.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FootballManager.DtoModels\FootballManager.DtoModels.csproj">
+      <Project>{394f01bd-f829-412c-8558-da50c5786ec1}</Project>
+      <Name>FootballManager.DtoModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MsSql.Data\MsSql.Data.csproj">
+      <Project>{460584ce-3dff-46ac-8746-f4266d0178a2}</Project>
+      <Name>MsSql.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

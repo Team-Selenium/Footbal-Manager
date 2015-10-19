@@ -1,7 +1,12 @@
 ﻿namespace TestApp
 {
-    using System;
     using MsSql.Data;
+    using Pdf.Data;
+    using System;
+
+
+    using System.Collections.Generic;
+
     using XML.Data;
 
     internal class Program
@@ -9,13 +14,14 @@
         private const string ZipPlayersPath = "../../../Data Sources/ZIP/Players.zip";
         private const string XmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
         private const string XmlPlayersPath = "../../../Data Sources/XML/Players.xml";
+        private const string PdfReportPath = "../../../Data Sources/PDF/Report.pdf";
 
         private static void Main(string[] args)
         {
 
             var repo = new MSSqlRepository();
 
-            repo.GetWithDataAccess();
+            
 
 
             // var zip = System.IO.Compression.ZipFile.Open(ZipPlayersPath, ZipArchiveMode.Read);
@@ -44,6 +50,9 @@
             //    Console.WriteLine("Player Id: " + player.Id);
             //    Console.WriteLine("HomeTeam Id: " + player.Position);
             //}
+
+
+
         }
     }
 }

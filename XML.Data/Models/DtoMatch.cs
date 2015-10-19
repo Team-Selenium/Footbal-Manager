@@ -4,7 +4,7 @@
     using System.Xml.Serialization;
 
     [XmlRoot(ElementName = "match")]
-    public class MatchAdapter
+    public class DtoMatch
     {
         [XmlAttribute("id")]
         public int Id { get; set; }
