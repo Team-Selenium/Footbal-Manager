@@ -10,6 +10,7 @@
     public static class PdfUtils
     {
         private const int RowCountInPdfExport = 5;
+        private const string PdfPath = "../../../Data Sources/PDF/CitiesReport.pdf";
 
         public static void GeneratePdfReport()
         {
@@ -17,7 +18,7 @@
             var pdfData = repo.GetDataForPdfExport();
             var doc = new Document();
 
-            PdfWriter.GetInstance(doc, new FileStream("../../../Data Sources/PDF/TestDoc.pdf", FileMode.Create));
+            PdfWriter.GetInstance(doc, new FileStream(PdfPath, FileMode.Create));
 
             doc.Open();
 
@@ -63,8 +64,6 @@
 
             doc.Add(table);
             doc.Close();
-
-            Console.WriteLine("PDF export successfull!");
         }
     }
 }

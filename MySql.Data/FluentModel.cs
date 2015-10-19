@@ -7,7 +7,9 @@
 
     public partial class FluentModel : OpenAccessContext
     {
-        private static string connectionStringName = @"MySqlConnection";
+        private const string ConnectionStringName = @"MySqlConnection";
+        private const string ProviderName = "MySql.Data.MySqlClient";
+        private const string BackEnd = "MySql";
 
         private static BackendConfiguration backend =
             GetBackendConfiguration();
@@ -16,7 +18,7 @@
             new FluentModelMetadataSource();
 
         public FluentModel()
-            : base(connectionStringName, backend, metadataSource)
+            : base(ConnectionStringName, backend, metadataSource)
         {
         }
 
@@ -31,8 +33,8 @@
         public static BackendConfiguration GetBackendConfiguration()
         {
             BackendConfiguration backend = new BackendConfiguration();
-            backend.Backend = "MySql";
-            backend.ProviderName = "MySql.Data.MySqlClient";
+            backend.Backend = BackEnd;
+            backend.ProviderName = ProviderName;
 
             return backend;
         }

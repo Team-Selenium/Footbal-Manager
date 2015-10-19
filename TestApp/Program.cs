@@ -13,6 +13,7 @@
         private const string XmlMatchesPath = "../../../Data Sources/XML/Matches.xml";
         private const string XmlPlayersPath = "../../../Data Sources/XML/Players.xml";
         private const string PdfReportPath = "../../../Data Sources/PDF/Report.pdf";
+        private const string JsonReportPath = "../../../Data Sources/JSON";
 
         private static void Main(string[] args)
         {
@@ -27,7 +28,7 @@
 
             using (ctx)
             {
-                var files = Directory.GetFiles("../../../Data Sources/JSON");
+                var files = Directory.GetFiles(JsonReportPath);
 
                 var teams = ctx.GetAll<TeamReportDto>().ToList();
 
