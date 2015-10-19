@@ -33,14 +33,20 @@
             this.GetMongoData = new System.Windows.Forms.Button();
             this.FillDatFromZip = new System.Windows.Forms.Button();
             this.FillFromXml_btn = new System.Windows.Forms.Button();
+
             this.CreateMySqlDb = new System.Windows.Forms.Button();
+
+            this.GeneratePdfReport_btn = new System.Windows.Forms.Button();
+            this.GenerateXmlReport_btn = new System.Windows.Forms.Button();
+            this.GenerateJsonReport_btn = new System.Windows.Forms.Button();
+
             this.SuspendLayout();
             // 
             // CreateSqlServerDb
             // 
-            this.CreateSqlServerDb.Location = new System.Drawing.Point(79, 45);
+            this.CreateSqlServerDb.Location = new System.Drawing.Point(145, 33);
             this.CreateSqlServerDb.Name = "CreateSqlServerDb";
-            this.CreateSqlServerDb.Size = new System.Drawing.Size(132, 23);
+            this.CreateSqlServerDb.Size = new System.Drawing.Size(163, 38);
             this.CreateSqlServerDb.TabIndex = 0;
             this.CreateSqlServerDb.Text = "Create SQL Server DB";
             this.CreateSqlServerDb.UseVisualStyleBackColor = true;
@@ -48,7 +54,7 @@
             // 
             // GetMongoData
             // 
-            this.GetMongoData.Location = new System.Drawing.Point(79, 89);
+            this.GetMongoData.Location = new System.Drawing.Point(44, 91);
             this.GetMongoData.Name = "GetMongoData";
             this.GetMongoData.Size = new System.Drawing.Size(132, 23);
             this.GetMongoData.TabIndex = 1;
@@ -58,7 +64,7 @@
             // 
             // FillDatFromZip
             // 
-            this.FillDatFromZip.Location = new System.Drawing.Point(79, 132);
+            this.FillDatFromZip.Location = new System.Drawing.Point(44, 132);
             this.FillDatFromZip.Name = "FillDatFromZip";
             this.FillDatFromZip.Size = new System.Drawing.Size(132, 23);
             this.FillDatFromZip.TabIndex = 2;
@@ -68,7 +74,7 @@
             // 
             // FillFromXml_btn
             // 
-            this.FillFromXml_btn.Location = new System.Drawing.Point(79, 180);
+            this.FillFromXml_btn.Location = new System.Drawing.Point(44, 174);
             this.FillFromXml_btn.Name = "FillFromXml_btn";
             this.FillFromXml_btn.Size = new System.Drawing.Size(132, 23);
             this.FillFromXml_btn.TabIndex = 3;
@@ -76,6 +82,7 @@
             this.FillFromXml_btn.UseVisualStyleBackColor = true;
             this.FillFromXml_btn.Click += new System.EventHandler(this.FillFromXml_btn_Click);
             // 
+
             // CreateMySqlDb
             // 
             this.CreateMySqlDb.Location = new System.Drawing.Point(79, 242);
@@ -85,13 +92,51 @@
             this.CreateMySqlDb.Text = "Create MySql Db";
             this.CreateMySqlDb.UseVisualStyleBackColor = true;
             this.CreateMySqlDb.Click += new System.EventHandler(this.CreateMySqlDb_Click);
+
+            // GeneratePdfReport_btn
+            // 
+            this.GeneratePdfReport_btn.Location = new System.Drawing.Point(228, 91);
+            this.GeneratePdfReport_btn.Name = "GeneratePdfReport_btn";
+            this.GeneratePdfReport_btn.Size = new System.Drawing.Size(132, 23);
+            this.GeneratePdfReport_btn.TabIndex = 4;
+            this.GeneratePdfReport_btn.Text = "Generate Pdf report";
+            this.GeneratePdfReport_btn.UseVisualStyleBackColor = true;
+            this.GeneratePdfReport_btn.Click += new System.EventHandler(this.GeneratePdfReport_btn_Click);
+            // 
+            // GenerateXmlReport_btn
+            // 
+            this.GenerateXmlReport_btn.Location = new System.Drawing.Point(228, 132);
+            this.GenerateXmlReport_btn.Name = "GenerateXmlReport_btn";
+            this.GenerateXmlReport_btn.Size = new System.Drawing.Size(132, 23);
+            this.GenerateXmlReport_btn.TabIndex = 5;
+            this.GenerateXmlReport_btn.Text = "Generate Xml report";
+            this.GenerateXmlReport_btn.UseVisualStyleBackColor = true;
+            this.GenerateXmlReport_btn.Click += new System.EventHandler(this.GenerateXmlReport_btn_Click);
+            // 
+            // GenerateJsonReport_btn
+            // 
+            this.GenerateJsonReport_btn.Location = new System.Drawing.Point(228, 174);
+            this.GenerateJsonReport_btn.Name = "GenerateJsonReport_btn";
+            this.GenerateJsonReport_btn.Size = new System.Drawing.Size(132, 23);
+            this.GenerateJsonReport_btn.TabIndex = 6;
+            this.GenerateJsonReport_btn.Text = "Generate Json report";
+            this.GenerateJsonReport_btn.UseVisualStyleBackColor = true;
+            this.GenerateJsonReport_btn.Click += new System.EventHandler(this.GenerateJsonReport_btn_Click);
+
             // 
             // FootballManagerClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(281, 312);
             this.Controls.Add(this.CreateMySqlDb);
+
+            this.ClientSize = new System.Drawing.Size(435, 262);
+            this.Controls.Add(this.GenerateJsonReport_btn);
+            this.Controls.Add(this.GenerateXmlReport_btn);
+            this.Controls.Add(this.GeneratePdfReport_btn);
+
             this.Controls.Add(this.FillFromXml_btn);
             this.Controls.Add(this.FillDatFromZip);
             this.Controls.Add(this.GetMongoData);
@@ -108,6 +153,12 @@
         private System.Windows.Forms.Button GetMongoData;
         private System.Windows.Forms.Button FillDatFromZip;
         private System.Windows.Forms.Button FillFromXml_btn;
+
         private System.Windows.Forms.Button CreateMySqlDb;
+
+        private System.Windows.Forms.Button GeneratePdfReport_btn;
+        private System.Windows.Forms.Button GenerateXmlReport_btn;
+        private System.Windows.Forms.Button GenerateJsonReport_btn;
+
     }
 }

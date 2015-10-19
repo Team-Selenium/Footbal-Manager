@@ -10,6 +10,7 @@
     using MsSql.Data;
     using MySql.Data;
     using XML.Data;
+    using Utilities;
 
     public partial class FootballManagerClient : Form
     {
@@ -137,6 +138,22 @@
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Something bad happened",
+                    "Fatal Error",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
+            }
+        }
+
+        private void GeneratePdfReport_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PdfUtils.GeneratePdfReport();
+            }
             catch (Exception)
             {
                 MessageBox.Show(
@@ -145,6 +162,56 @@
                     MessageBoxButtons.OKCancel,
                     MessageBoxIcon.Information);
             }
+
+            MessageBox.Show(
+                    "The Pdf report is ready",
+                    "Pdf report",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+        }
+
+        private void GenerateXmlReport_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Write logic here
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Something bad happened",
+                    "Fatal Error",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
+            }
+
+            MessageBox.Show(
+                    "The XML report is still not implemented. When ready, change this message",
+                    "XML report",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+        }
+
+        private void GenerateJsonReport_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                JsonUtils.JsonCreateReports();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show(
+                    "Something bad happened",
+                    "Fatal Error",
+                    MessageBoxButtons.OKCancel,
+                    MessageBoxIcon.Information);
+            }
+
+            MessageBox.Show(
+                    "The JSON report is generated",
+                    "JSON report",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
         }
 
         private void CreateMySqlDb_Click(object sender, EventArgs e)
