@@ -1,11 +1,11 @@
 ﻿namespace Utilities
 {
     using System;
-    using System.Linq;
-    using MsSql.Data;
+    using System.Diagnostics;
+    using System.IO;
     using iTextSharp.text;
     using iTextSharp.text.pdf;
-    using System.IO;
+    using MsSql.Data;
 
     public static class PdfUtils
     {
@@ -17,7 +17,7 @@
             var pdfData = repo.GetDataForPdfExport();
             var doc = new Document();
 
-            PdfWriter.GetInstance(doc, new FileStream("../../../Data Sources/PDF/TestDoc.pdf", FileMode.Create));
+            PdfWriter.GetInstance(doc, new FileStream("../../../Data Sources/PDF/Matches-Report.pdf", FileMode.Create));
 
             doc.Open();
 
@@ -65,6 +65,8 @@
             doc.Close();
 
             Console.WriteLine("PDF export successfull!");
+
+            Process.Start(@"..\..\..\Data Sources\PDF\");
         }
     }
 }

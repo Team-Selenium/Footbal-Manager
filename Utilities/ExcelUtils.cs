@@ -32,6 +32,12 @@
             {
                 if (entry.FullName.EndsWith(".xls"))
                 {
+                    var entryParts = entry.FullName.Split(new char[] { '/', '\\' }, StringSplitOptions.RemoveEmptyEntries);
+                    var fileName = entry.FullName;
+                    if (entryParts.Length > 1)
+                    {
+                        fileName = entryParts[entryParts.Length - 1];
+                    }
                     using (var ms = new MemoryStream())
                     {
                         var file = File.Create(TempFile);
@@ -73,8 +79,7 @@
                             {
                                 while (reader.Read())
                                 {
-                                    var team = entry.FullName.Split('.')[0];
-
+                                    var team = fileName.Split('.')[0];
                                     if (!teamPlayers.ContainsKey(team))
                                     {
                                         teamPlayers.Add(team, new List<Player>());
@@ -135,7 +140,7 @@
                     worksheet.Cells[currentRow, 1].Value = teamName;
 
 
-                    var teamReportForCurrentTeam = teamReports.FirstOrDefault(tr => tr.Name == teamName);
+                    var teamReportForCurrentTeam = teamReports.FirstOrDefault(tr => tr.Name.ToLower() == teamName.ToLower());
 
 
                     worksheet.Cells[currentRow, 2].Value = teamReportForCurrentTeam == null
