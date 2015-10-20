@@ -6,6 +6,10 @@
 
     public class SqliteRepository
     {
+        /// <summary>
+        /// Gets product data - TeamName, JerseyColor, ShortsColor, LeagueTitles, Cuptitles, KitsPrice, BootsPrice and Id
+        /// </summary>
+        /// <returns>Returns an IList of TeamInfoDto</returns>
         public IList<TeamInfoDto> GetProductTaxData()
         {
             var ctx = new TeamInfoEntities();

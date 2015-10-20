@@ -1,7 +1,7 @@
 ﻿namespace Utilities
 {
-    using MsSql.Data;
     using System.Xml;
+    using MsSql.Data;
 
     public static class XmlUtils
     {
@@ -10,6 +10,9 @@
         private const string Encoding = "UTF-8";
         private const string RootName = "stadiums";
 
+        /// <summary>
+        /// Creates XML reports and save then as XML file
+        /// </summary>
         public static void XmlCreateReports()
         {
             var repo = new MSSqlRepository();
@@ -20,13 +23,11 @@
             XmlDeclaration xmlDeclaration = xmlReport.CreateXmlDeclaration(Version, Encoding, null);
             XmlElement root = xmlReport.CreateElement(RootName);
             
-
             foreach (var stadium in stadiumReport)
             {
                 XmlElement stadiumElement = xmlReport.CreateElement("stadium");
                 stadiumElement.SetAttribute("id", stadium.Id.ToString());
                 
-
                 XmlElement stadiumName = xmlReport.CreateElement("name");
                 stadiumName.InnerText = stadium.Name;
 

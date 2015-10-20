@@ -19,6 +19,10 @@
             }
         }
        
+        /// <summary>
+        /// Gets report for all teams - Id, Name, Owner, Coach, NumberOfPlayers and NumberOfMatches
+        /// </summary>
+        /// <returns>Returns a collection of DtoTeamReport</returns>
         public ICollection<DtoTeamReport> GetTeamReport()
         {
             var ctx = new FootballContext();
@@ -39,13 +43,18 @@
             }
         }
 
+        /// <summary>
+        /// Gets report for all stadiums - Id, Name, Capacity and Town
+        /// </summary>
+        /// <returns>Returns a collection of DtoStadiumReport</returns>
         public ICollection<DtoStadiumReport> GetStadiumReport()
         {
             var ctx = new FootballContext();
 
             using (ctx)
             {
-                var stadiumReport = ctx.Stadiums.Select(s => new DtoStadiumReport {
+                var stadiumReport = ctx.Stadiums.Select(s => new DtoStadiumReport 
+                {
                     Id = s.Id,
                     Name = s.Name,
                     Capacity = s.Capacity,
@@ -71,6 +80,10 @@
             }
         }
 
+        /// <summary>
+        /// Fill the players with data taken from ZIP file
+        /// </summary>
+        /// <param name="teams">Gets a dictionary with KEY of type string and VALUE of type List<Player></param>
         public void FillPlayersFromZip(Dictionary<string, List<Player>> teams)
         {
             var ctx = new FootballContext();
@@ -110,6 +123,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets matches data - Date, Town, Stadium, HomeTeam, AwayTeam and Result for export in PDF
+        /// </summary>
+        /// <returns>Returns a dictionary with KEY of type string and VALUE of type List<DtoPdfExportTable></returns>
         public Dictionary<string, List<DtoPdfExportTable>> GetDataForPdfExport()
         {
             using (var ctx = new FootballContext())

@@ -19,6 +19,10 @@
 
         internal FootballContext Db { get; set; }
 
+        /// <summary>
+        /// Gets all matches
+        /// </summary>
+        /// <returns>Returns a collections of Match</returns>
         public ICollection<Match> GetAllMatches()
         {
             var dtoMatches = this.DtoModels.GetAllDtoMatches();

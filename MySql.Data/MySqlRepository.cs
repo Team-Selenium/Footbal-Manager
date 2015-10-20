@@ -9,6 +9,10 @@
 
     public class MySqlRepository
     {
+        /// <summary>
+        /// Imports data from JSON file
+        /// </summary>
+        /// <param name="path">gets a path of type string</param>
         public void ImportDbDataFromJson(string path)
         {
             var ctx = new FluentModel();
@@ -57,6 +61,9 @@
             }).ToList();
         }
 
+        /// <summary>
+        /// Update the Database
+        /// </summary>
         public void UpdateDatabase()
         {
             using (var context = new FluentModel())

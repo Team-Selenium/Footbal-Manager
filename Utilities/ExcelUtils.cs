@@ -23,6 +23,11 @@
         private const int Columns = 12;
         private const string TempFile = "temp.xls";
 
+        /// <summary>
+        /// Gets all players from a ZIP archive
+        /// </summary>
+        /// <param name="zip">Gets a ZIP archive</param>
+        /// <returns>Returns a Dictionary with a key of type string and value ot type List<Player></returns>
         public static Dictionary<string, List<Player>> GetAllPlayers(ZipArchive zip)
         {
             var sales = new List<List<string>>();
@@ -38,6 +43,7 @@
                     {
                         fileName = entryParts[entryParts.Length - 1];
                     }
+
                     using (var ms = new MemoryStream())
                     {
                         var file = File.Create(TempFile);
@@ -105,6 +111,11 @@
             return teamPlayers;
         }
 
+        /// <summary>
+        /// Generate reportin Excel
+        /// </summary>
+        /// <param name="teamInfos">Gets as first argument a list of TeamInfoDto and list of DtomTeamReport as second argument</param>
+        /// <param name="teamReports"></param>
         public static void GenerateExcelReportForTeams(IList<TeamInfoDto> teamInfos, IList<DtoTeamReport> teamReports)
         {
             var newFile = CreateFile();
@@ -208,6 +219,10 @@
             Process.Start(ExcelReportFilePath);
         }
 
+        /// <summary>
+        /// Creates a file. First check the directory. If if doesn't exist creates a new one then create a new file
+        /// </summary>
+        /// <returns>Returns FileInfo</returns>
         private static FileInfo CreateFile()
         {
             if (!Directory.Exists(ExcelReportFilePath))
@@ -226,6 +241,11 @@
             return newFile;
         }
 
+        /// <summary>
+        /// Copy stream using input and output parameters
+        /// </summary>
+        /// <param name="input">Gets an input of type Stream</param>
+        /// <param name="output">Gets an output of type Stream</param>
         private static void CopyStream(Stream input, Stream output)
         {
             var buffer = new byte[2048];

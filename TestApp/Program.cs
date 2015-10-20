@@ -20,9 +20,9 @@
         {
             XmlUtils.XmlCreateReports();
 
-            //UpdateDatabase();
+            // UpdateDatabase();
 
-            //ImportDbDataFromJson();
+            // ImportDbDataFromJson();
         }
 
         private static void ImportDbDataFromJson()

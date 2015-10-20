@@ -17,6 +17,10 @@
         private static readonly IMongoCollection<BsonDocument> TeamsCollection = Database.GetCollection<BsonDocument>("Teams");
         private static readonly IMongoCollection<BsonDocument> StadiumsCollection = Database.GetCollection<BsonDocument>("Stadiums");
 
+        /// <summary>
+        /// Gets the teams data
+        /// </summary>
+        /// <returns>Returns an instance of Task. TResult - IList of Team</returns>
         public async Task<IList<Team>> GetTeamsData()
         {
             var teams = (await TeamsCollection.Find(new BsonDocument()).ToListAsync())
@@ -25,6 +29,10 @@
             return teams;
         }
 
+        /// <summary>
+        /// Gets the stadiums data
+        /// </summary>
+        /// <returns>Returns an instance of Task. TResult - IList of Stadium</returns>
         public async Task<IList<Stadium>> GetStadiumsData()
         {
             var stadiums = (await StadiumsCollection.Find(new BsonDocument()).ToListAsync())
