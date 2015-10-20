@@ -4,6 +4,9 @@
     using System.Linq;
     using FootballManager.DtoModels;
 
+    /// <summary>
+    /// SQLite repository
+    /// </summary>
     public class SqliteRepository
     {
         /// <summary>

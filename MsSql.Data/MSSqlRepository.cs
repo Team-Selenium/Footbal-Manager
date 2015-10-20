@@ -8,6 +8,9 @@
     using Football.Models;
     using FootballManager.DtoModels;
 
+    /// <summary>
+    /// Microsoft's SQL repository
+    /// </summary>
     public class MSSqlRepository
     {
         public async Task CreateDb()

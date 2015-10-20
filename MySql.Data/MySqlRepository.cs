@@ -7,6 +7,9 @@
     using Newtonsoft.Json;
     using Telerik.OpenAccess;
 
+    /// <summary>
+    /// MySQL repository
+    /// </summary>
     public class MySqlRepository
     {
         /// <summary>
@@ -46,6 +49,10 @@
             }
         }
 
+        /// <summary>
+        /// Gets reports for teams
+        /// </summary>
+        /// <returns>Returns a list of dto team reports containing id, name, coach, owner, NumberOfPlayers and NumberOfMatches</returns>
         public IList<DtoTeamReport> GetTeamReports()
         {
             var ctx = new FluentModel();
@@ -73,6 +80,10 @@
             }
         }
 
+        /// <summary>
+        /// Ensures database exists and if not creates one
+        /// </summary>
+        /// <param name="schemaHandler">Gets schemaHandler of type ISchemaHandler</param>
         private void EnsureDB(ISchemaHandler schemaHandler)
         {
             string script = null;
