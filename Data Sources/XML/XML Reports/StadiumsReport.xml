@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<stadiums>
+  <stadium id="1">
+    <name>National stadium Vasil Levski</name>
+    <capacity>45000</capacity>
+    <town>Sofia</town>
+  </stadium>
+  <stadium id="2">
+    <name>Gerena</name>
+    <capacity>30000</capacity>
+    <town>Sofia</town>
+  </stadium>
+  <stadium id="3">
+    <name>Bulgarian Army Stadium</name>
+    <capacity>30000</capacity>
+    <town>Sofia</town>
+  </stadium>
+  <stadium id="4">
+    <name>Slavia stadium</name>
+    <capacity>15000</capacity>
+    <town>Sofia</town>
+  </stadium>
+</stadiums>

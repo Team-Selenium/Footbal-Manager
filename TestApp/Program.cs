@@ -6,6 +6,7 @@
     using MySql.Data;
     using Newtonsoft.Json;
     using Telerik.OpenAccess;
+    using Utilities;
 
     internal class Program
     {
@@ -17,9 +18,11 @@
 
         private static void Main(string[] args)
         {
-            UpdateDatabase();
+            XmlUtils.XmlCreateReports();
 
-            ImportDbDataFromJson();
+            //UpdateDatabase();
+
+            //ImportDbDataFromJson();
         }
 
         private static void ImportDbDataFromJson()

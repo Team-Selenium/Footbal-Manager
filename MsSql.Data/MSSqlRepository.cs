@@ -39,6 +39,23 @@
             }
         }
 
+        public ICollection<DtoStadiumReport> GetStadiumReport()
+        {
+            var ctx = new FootballContext();
+
+            using (ctx)
+            {
+                var stadiumReport = ctx.Stadiums.Select(s => new DtoStadiumReport {
+                    Id = s.Id,
+                    Name = s.Name,
+                    Capacity = s.Capacity,
+                    TownName = s.Town.Name
+                }).ToList();
+
+                return stadiumReport;
+            }
+        }
+
         public void FillMatchesFromXml(ICollection<Match> matches)
         {
             var ctx = new FootballContext();
