@@ -6,12 +6,18 @@
     using iTextSharp.text.pdf;
     using MsSql.Data;
 
+    /// <summary>
+    /// Generator for PDF reports and saving them
+    /// </summary>
     public static class PdfUtils
     {
         private const int RowCountInPdfExport = 5;
         private const string PdfPath = @"..\..\..\Data Sources\PDF\";
         private const string PdfFileName = "CitiesReport.pdf";
 
+        /// <summary>
+        /// Creates PDF reports and saves them as a PDF file
+        /// </summary>
         public static void GeneratePdfReport()
         {
             File.Delete(PdfPath + PdfFileName);

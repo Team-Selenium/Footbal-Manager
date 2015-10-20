@@ -6,6 +6,9 @@
     using MsSql.Data;
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Generator for a JSON report file holding information about teams
+    /// </summary>
     public static class JsonUtils
     {
         private const string SaveFilePath = @"..\..\..\Data Sources\JSON\";

@@ -14,6 +14,9 @@
     using OfficeOpenXml;
     using OfficeOpenXml.Style;
 
+    /// <summary>
+    /// Generator for an Excel report file holding information about players and teams
+    /// </summary>
     public static class ExcelUtils
     {
         private const string ExcelReportFilePath = @"..\..\..\Data Sources\Excel";
@@ -112,7 +115,7 @@
         }
 
         /// <summary>
-        /// Generate reportin Excel
+        /// Generate reporting Excel for teams
         /// </summary>
         /// <param name="teamInfos">Gets as first argument a list of TeamInfoDto and list of DtomTeamReport as second argument</param>
         /// <param name="teamReports"></param>
@@ -220,7 +223,7 @@
         }
 
         /// <summary>
-        /// Creates a file. First check the directory. If if doesn't exist creates a new one then create a new file
+        /// Creates a file. First check the directory. If it doesn't exist creates a new one then creates a new file
         /// </summary>
         /// <returns>Returns FileInfo</returns>
         private static FileInfo CreateFile()

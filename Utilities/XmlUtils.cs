@@ -3,6 +3,9 @@
     using System.Xml;
     using MsSql.Data;
 
+    /// <summary>
+    /// Generator for XML reports and saving them
+    /// </summary>
     public static class XmlUtils
     {
         private const string SaveFilePath = @"..\..\..\Data Sources\XML\XML Reports\StadiumsReport.xml";
@@ -11,7 +14,7 @@
         private const string RootName = "stadiums";
 
         /// <summary>
-        /// Creates XML reports and save then as XML file
+        /// Creates XML reports and save them as a XML file
         /// </summary>
         public static void XmlCreateReports()
         {
