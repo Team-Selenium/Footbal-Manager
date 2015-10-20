@@ -1,8 +1,8 @@
 {
-  "Id": 5,
+  "Id": 6,
   "Name": "Beroe",
   "Owner": "Maritza Iztok 2 Pesho",
   "Coach": "Petar Hubchev",
-  "NumberOfPlayers": 0,
-  "NumbersOfMatches": 8
+  "NumberOfPlayers": 30,
+  "NumbersOfMatches": 2
 }

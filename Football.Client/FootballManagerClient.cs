@@ -28,7 +28,7 @@
             var repo = new MSSqlRepository();
             try
             {
-                await repo.CreteDb();
+                await repo.CreateDb();
                 MessageBox.Show(
                     "The db is created",
                     "Db creation",
@@ -177,10 +177,12 @@
         {
             try
             {
+                var repo = new MSSqlRepository();
+                XmlUtils.XmlCreateReports(repo.GetStadiumReport());
                 // Write logic here
                 MessageBox.Show(
-                   "The XML report is still not implemented. When ready, change this message",
-                   "XML report",
+                   "The XML report for stadiums",
+                   "Stadiums report generated!",
                    MessageBoxButtons.OK,
                    MessageBoxIcon.Information);
             }

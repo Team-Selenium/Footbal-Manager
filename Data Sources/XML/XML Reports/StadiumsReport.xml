@@ -20,4 +20,14 @@
     <capacity>15000</capacity>
     <town>Sofia</town>
   </stadium>
+  <stadium id="5">
+    <name>Beroe Stadium</name>
+    <capacity>12128</capacity>
+    <town>Stara Zagora</town>
+  </stadium>
+  <stadium id="6">
+    <name>Lovech Sity Stadium</name>
+    <capacity>8100</capacity>
+    <town>Lovech</town>
+  </stadium>
 </stadiums>

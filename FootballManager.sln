@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Models", "Football.Models\Football.Models.csproj", "{75BDA7E9-A206-4887-A0E1-1E203593460D}"
 EndProject
@@ -22,8 +22,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sqlite.Data", "Sqlite.Data\Sqlite.Data.csproj", "{A3AED09A-578E-46BB-9FED-DE14275F4F4A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Football.Client", "Football.Client\Football.Client.csproj", "{CD5DA011-B572-4D59-B14C-43F8C476F228}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{55685484-233B-476B-B1D8-380E748B4467}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{12E4EE1A-C38C-461A-923B-B4FC79C846B6}"
 EndProject
@@ -63,10 +61,6 @@ Global
 		{CD5DA011-B572-4D59-B14C-43F8C476F228}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD5DA011-B572-4D59-B14C-43F8C476F228}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD5DA011-B572-4D59-B14C-43F8C476F228}.Release|Any CPU.Build.0 = Release|Any CPU
-		{55685484-233B-476B-B1D8-380E748B4467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{55685484-233B-476B-B1D8-380E748B4467}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{55685484-233B-476B-B1D8-380E748B4467}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{55685484-233B-476B-B1D8-380E748B4467}.Release|Any CPU.Build.0 = Release|Any CPU
 		{12E4EE1A-C38C-461A-923B-B4FC79C846B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{12E4EE1A-C38C-461A-923B-B4FC79C846B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12E4EE1A-C38C-461A-923B-B4FC79C846B6}.Release|Any CPU.ActiveCfg = Release|Any CPU

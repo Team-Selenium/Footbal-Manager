@@ -1,8 +1,8 @@
 {
-  "Id": 3,
+  "Id": 4,
   "Name": "Litex",
   "Owner": "Programista Gosho",
   "Coach": "Valio ",
-  "NumberOfPlayers": 0,
-  "NumbersOfMatches": 2
+  "NumberOfPlayers": 22,
+  "NumbersOfMatches": 3
 }
