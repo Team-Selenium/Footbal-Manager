@@ -10,7 +10,7 @@
 
     public class MSSqlRepository
     {
-        public async Task CreteDb()
+        public async Task CreateDb()
         {
             using (var ctx = new FootballContext())
             {
@@ -65,6 +65,10 @@
             }
         }
 
+        /// <summary>
+        /// Fill the matches with data taken from XML file
+        /// </summary>
+        /// <param name="matches">Gets a collection of matches</param>
         public void FillMatchesFromXml(ICollection<Match> matches)
         {
             var ctx = new FootballContext();
